@@ -28,7 +28,7 @@ export default class Plan3 {
   setPosition() {
     // Set camera position
     this.plan3.position.z = -0.1
-    this.plan3.position.y = -0.4
+    this.plan3.position.y = -0.32
     this.plan3.position.x = 2
   }
 }

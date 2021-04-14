@@ -1,4 +1,4 @@
-import { Object3D, PointLight, Color } from 'three'
+import {Object3D, PointLight, Color, HemisphereLight} from 'three'
 
 export default class PointLightSource {
   constructor(options) {
@@ -11,8 +11,8 @@ export default class PointLightSource {
     this.params = {
       color: 0xffffff,
       positionX: 0,
-      positionY: 2,
-      positionZ: 5,
+      positionY: 5,
+      positionZ: 3,
     }
 
     this.createPointLight()
@@ -22,7 +22,7 @@ export default class PointLightSource {
     }
   }
   createPointLight() {
-    this.light = new PointLight(this.params.color)
+    this.light = new PointLight(this.params.color, 0.6)
     this.light.castShadow = true
     this.light.position.set(
       this.params.positionX,

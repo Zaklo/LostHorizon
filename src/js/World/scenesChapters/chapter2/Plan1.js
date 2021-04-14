@@ -1,4 +1,4 @@
-import { Object3D } from 'three'
+import { Object3D, AnimationMixer } from 'three'
 
 export default class Plan1 {
   constructor(options) {
@@ -21,7 +21,8 @@ export default class Plan1 {
 
   setMovement() {
     this.time.on('tick', () => {
-      this.plan1.rotation.y += 0.005
+      let mixer= new AnimationMixer(this.plan1);
+      this.plan1.animations.forEach((clip) => {mixer.clipAction(clip).play(); });
     })
   }
 

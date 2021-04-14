@@ -27,7 +27,7 @@ export default class BG {
 
   setPosition() {
     // Set camera position
-    this.bg.position.y = -0.5
+    this.bg.position.y = -1
     this.bg.scale.x = 2
     this.bg.scale.y = 2
     this.bg.position.x = 8
