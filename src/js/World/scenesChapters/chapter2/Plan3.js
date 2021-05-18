@@ -19,12 +19,6 @@ export default class Plan3 {
     this.container.add(this.plan3)
   }
 
-  setMovement() {
-    this.time.on('tick', () => {
-      this.plan3.rotation.y += 0.005
-    })
-  }
-
   setPosition() {
     // Set camera position
     this.plan3.position.z = -0.1

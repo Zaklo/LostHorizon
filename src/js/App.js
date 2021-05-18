@@ -1,4 +1,4 @@
-import { Scene, sRGBEncoding, WebGLRenderer } from 'three'
+import {Fog, Scene, sRGBEncoding, WebGLRenderer} from 'three'
 import * as dat from 'dat.gui'
 import MooveCamera from './Tools/MooveCamera'
 
@@ -28,6 +28,7 @@ export default class App {
   setRenderer() {
     // Set scene
     this.scene = new Scene()
+    this.scene.fog = new Fog('white', -1, 6);
     // Set renderer
     this.renderer = new WebGLRenderer({
       canvas: this.canvas,

@@ -1,4 +1,4 @@
-import {Object3D, AmbientLight, Color, SpotLight} from 'three'
+import {Object3D, AmbientLight, Color, SpotLight, HemisphereLight} from 'three'
 
 export default class AmbientLightSource {
   constructor(options) {
@@ -21,11 +21,13 @@ export default class AmbientLightSource {
     }
   }
   createAmbientLight() {
-    this.light = new SpotLight( 0xffffff, 0.2);
+    this.light = new AmbientLight( 0xffffff,0.4);
     this.light.castShadow = true;
-    this.light.shadow.bias = -0.0001;
+    /*this.light.shadow.bias = -0.0001;
     this.light.shadow.mapSize.width = 1024*4;
-    this.light.shadow.mapSize.height = 1024*4;
+    this.light.shadow.mapSize.height = 1024*4;/
+
+     */
     this.container.add(this.light)
   }
   setDebug() {

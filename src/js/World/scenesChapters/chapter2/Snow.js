@@ -1,6 +1,7 @@
-import {Geometry} from "three/examples/jsm/deprecated/Geometry";
-import {Vector3, PointsMaterial, Points, Object3D} from "three";
+import {Vector3, PointsMaterial, Points, Object3D, Float32BufferAttribute, BufferGeometry} from "three";
+import {AdditiveBlending} from "three";
 
+const vertex = new Vector3();
 export default class Snow {
     constructor(options) {
         this.time = options.time
@@ -13,42 +14,47 @@ export default class Snow {
         this.setMovement()
     }
 
+    rainVariation() {
+        let positionAttribute = this.rain.geometry.getAttribute('position');
+        for (let i = 0; i < positionAttribute.count; i++) {
+            vertex.fromBufferAttribute(positionAttribute, i);
+            vertex.y -= 0.02 * Math.random();
+            if (vertex.y < -20) {
+                vertex.y = 20;
+            }
+            positionAttribute.setXYZ(i, vertex.x, vertex.y, vertex.z);
+        }
+        positionAttribute.needsUpdate = true;
+    }
+
     setMovement() {
         this.time.on('tick', () => {
-            this.rainGeo.vertices.forEach(p => {
-                p.velocity -= 3 * Math.random();
-                p.y += p.velocity;
-                if (p.y < -100) {
-                    p.y = 100;
-                    p.velocity = 0;
-                }
-            })
-            this.rainGeo.verticesNeedUpdate = true;
-            this.rain.rotation.y += 0.002;
+            this.rainVariation()
         })
     }
 
     snowDrop() {
-        this.rainCount = 9500;
-        this.rainGeo = new Geometry();
-        for (let i = 0; i < this.rainCount; i++) {
-            let rainDrop = new Vector3(
-                Math.random() * 400 - 200,
-                Math.random() * 500 - 250,
-                Math.random() * 400 - 200
-            )
-            rainDrop.velocity = {};
-            rainDrop.velocity = 0;
-            this.rainGeo.vertices.push(rainDrop);
+        const geometry = new BufferGeometry();
+        const vertices = [];
+
+        for (let i = 0; i < 4000; i++) {
+            vertices.push(
+                Math.random() * 20 - 10,
+                Math.random() * 40 - 20,
+                Math.random() * 20 - 10
+            );
         }
 
-        let rainMaterial = new PointsMaterial({
-            color: 0xaaaaaa,
-            size: 0.1,
-            transparent: true
-        })
+        geometry.setAttribute('position', new Float32BufferAttribute(vertices, 3));
 
-        this.rain = new Points(this.rainGeo, rainMaterial);
+        const material = new PointsMaterial({
+            color: '#ffffff',
+            size: 0.02,
+            transparent: true,
+            blending: AdditiveBlending
+        });
+
+        this.rain = new Points(geometry, material);
         this.container.add(this.rain)
     }
 }

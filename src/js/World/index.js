@@ -1,4 +1,4 @@
-import {AxesHelper, Object3D, PlaneBufferGeometry, Mesh, Clock, MeshLambertMaterial, TextureLoader} from 'three'
+import {AxesHelper, Object3D } from 'three'
 
 import AmbientLightSource from './AmbientLight'
 import PointLightSource from './PointLight'
@@ -41,7 +41,7 @@ export default class World {
 
     init() {
         this.setAmbientLight()
-        this.setPointLight()
+        //this.setPointLight()
         this.setPlans()
         this.setChar()
     }
@@ -119,7 +119,7 @@ export default class World {
             this.plan3.container,
             this.bg.container,
             this.sol.container,
-            this.snow.container
+            this.snow.container,
         )
     }
 

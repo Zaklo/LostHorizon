@@ -19,12 +19,6 @@ export default class Plan2 {
     this.container.add(this.plan2)
   }
 
-  setMovement() {
-    this.time.on('tick', () => {
-      this.plan2.rotation.y += 0.005
-    })
-  }
-
   setPosition() {
     // Set camera position
     this.plan2.position.y = -0.35

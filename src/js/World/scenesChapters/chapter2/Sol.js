@@ -19,12 +19,6 @@ export default class Sol {
     this.container.add(this.sol)
   }
 
-  setMovement() {
-    this.time.on('tick', () => {
-      this.sol.rotation.y += 0.005
-    })
-  }
-
   setPosition() {
     // Set camera position
     this.sol.position.y = -0.42

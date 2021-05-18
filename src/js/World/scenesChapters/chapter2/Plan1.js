@@ -1,4 +1,4 @@
-import { Object3D, AnimationMixer } from 'three'
+import {Object3D, AnimationMixer, Mesh, MeshBasicMaterial} from 'three'
 
 export default class Plan1 {
   constructor(options) {
@@ -16,14 +16,9 @@ export default class Plan1 {
 
   createPlan1() {
     this.plan1 = this.assets.models.chap2.plan1.scene
+    //const material = new MeshBasicMaterial( { transparent: true } );
+    //let mesh = new Mesh(this.plan1, material )
     this.container.add(this.plan1)
-  }
-
-  setMovement() {
-    this.time.on('tick', () => {
-      let mixer= new AnimationMixer(this.plan1);
-      this.plan1.animations.forEach((clip) => {mixer.clipAction(clip).play(); });
-    })
   }
 
   setPosition() {
