@@ -39,7 +39,7 @@ export default class Snow {
 
         for (let i = 0; i < 4000; i++) {
             vertices.push(
-                Math.random() * 20 - 10,
+                Math.random() * 100 - 50,
                 Math.random() * 40 - 20,
                 Math.random() * 20 - 10
             );

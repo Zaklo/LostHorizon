@@ -10,9 +10,9 @@ export default class PointLightSource {
     this.container.name = 'Point Light'
     this.params = {
       color: 0xffffff,
-      positionX: 0,
-      positionY: 5,
-      positionZ: 3,
+      positionX: -1,
+      positionY: 4,
+      positionZ: -4.4,
     }
 
     this.createPointLight()
@@ -22,13 +22,18 @@ export default class PointLightSource {
     }
   }
   createPointLight() {
-    this.light = new PointLight(this.params.color, 0.6)
-    this.light.castShadow = true
+    this.light = new PointLight(this.params.color, 0.6, 19)
     this.light.position.set(
       this.params.positionX,
       this.params.positionY,
       this.params.positionZ
     )
+    this.light.castShadow = true
+    this.light.shadow.mapSize.width = 512; // default
+    this.light.shadow.mapSize.height = 512; // default
+    this.light.shadow.camera.near = 0.1; // default
+    this.light.shadow.camera.far = 15; // default
+
     this.container.add(this.light)
   }
   setDebug() {

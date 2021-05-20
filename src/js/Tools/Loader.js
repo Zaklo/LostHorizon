@@ -31,7 +31,6 @@ export default class Loader extends EventEmitter {
 
     const gltfLoader = new GLTFLoader()
     gltfLoader.setDRACOLoader(dracoLoader)
-
     const fbxLoader = new FBXLoader()
 
     const textureLoader = new TextureLoader()

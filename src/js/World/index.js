@@ -1,15 +1,14 @@
-import {AxesHelper, Object3D } from 'three'
+import {AxesHelper, Object3D} from 'three'
 
 import AmbientLightSource from './AmbientLight'
 import PointLightSource from './PointLight'
 import Plan1 from './../World/scenesChapters/chapter2/Plan1'
 import Plan2 from './../World/scenesChapters/chapter2/Plan2'
-import Plan3 from './../World/scenesChapters/chapter2/Plan3'
 import BG from './../World/scenesChapters/chapter2/BG'
 import Character from './Character'
 import MooveCamera from '../Tools/MooveCamera'
-import Sol from "./scenesChapters/chapter2/Sol";
 import Snow from "./scenesChapters/chapter2/Snow";
+import Sol from "./scenesChapters/chapter2/Sol";
 
 export default class World {
     constructor(options) {
@@ -31,17 +30,15 @@ export default class World {
 
         this.setLoader()
 
-        this.time.on('tick', () => {
-            // this.toggleNDMode()
-            this.wheel.on('wheelMove', () => {
-                this.MoveCamera()
-            })
+        // this.toggleNDMode()
+        this.wheel.on('keydown', () => {
+            this.MoveCamera()
         })
     }
 
     init() {
         this.setAmbientLight()
-        //this.setPointLight()
+        this.setPointLight()
         this.setPlans()
         this.setChar()
     }
@@ -97,10 +94,6 @@ export default class World {
             time: this.time,
             assets: this.assets,
         })
-        this.plan3 = new Plan3({
-            time: this.time,
-            assets: this.assets,
-        })
         this.bg = new BG({
             time: this.time,
             assets: this.assets,
@@ -114,11 +107,10 @@ export default class World {
             assets: this.assets,
         })
         this.container.add(
+            this.sol.container,
             this.plan1.container,
             this.plan2.container,
-            this.plan3.container,
             this.bg.container,
-            this.sol.container,
             this.snow.container,
         )
     }
@@ -132,6 +124,6 @@ export default class World {
     }
 
     MoveCamera() {
-        this.character.perso.position.x += this.wheel.getDelta() * 0.001
+        this.character.perso.position.x += this.wheel.getDelta() * 0.5
     }
 }

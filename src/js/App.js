@@ -1,4 +1,4 @@
-import {Fog, Scene, sRGBEncoding, WebGLRenderer} from 'three'
+import {BasicShadowMap, FogExp2, Scene, sRGBEncoding, WebGLRenderer} from 'three'
 import * as dat from 'dat.gui'
 import MooveCamera from './Tools/MooveCamera'
 
@@ -28,7 +28,7 @@ export default class App {
   setRenderer() {
     // Set scene
     this.scene = new Scene()
-    this.scene.fog = new Fog('white', -1, 6);
+    this.scene.fog = new FogExp2(0xFFFFFF, 0.09);
     // Set renderer
     this.renderer = new WebGLRenderer({
       canvas: this.canvas,
@@ -43,6 +43,9 @@ export default class App {
     // Set renderer pixel ratio & sizes
     this.renderer.setPixelRatio(window.devicePixelRatio)
     this.renderer.setSize(this.sizes.viewport.width, this.sizes.viewport.height)
+
+    this.renderer.shadowMap.enabled = true
+    this.renderer.shadowMap.type = BasicShadowMap
     // Resize renderer on resize event
     this.sizes.on('resize', () => {
       this.renderer.setSize(
@@ -54,7 +57,7 @@ export default class App {
     this.time.on('tick', () => {
       this.renderer.render(this.scene, this.camera.camera)
       // this.toggleNDMode()
-      this.wheel.on('wheelMove', () => {
+      this.wheel.on('keydown', () => {
         this.MoveCamera()
       })
     })
@@ -102,6 +105,7 @@ export default class App {
   }
 
   MoveCamera() {
-    this.camera.camera.position.x += this.wheel.getDelta() * 0.001
+    this.camera.camera.position.x += this.wheel.getDelta() * 0.5
+    this.camera.camera.updateProjectionMatrix();
   }
 }

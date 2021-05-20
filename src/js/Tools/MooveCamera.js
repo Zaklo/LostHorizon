@@ -6,15 +6,28 @@ export default class Scroll extends EventEmitter {
     super()
     this.delta = 0
     // Set up
-    document.addEventListener('wheel', (event) => {
-      this.wheelMove(event)
-    })
+
+    document.addEventListener('keydown', (event) => {
+      const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
+      switch (event.key) {
+        case "ArrowLeft":
+          this.backwardMove(event);
+          break;
+        case "ArrowRight":
+          this.forwardMove(event);
+          break;
+      }
+    });
   }
 
-  // on('tick')
-  wheelMove(event) {
-    this.delta = this.delta + event.deltaY
-    this.trigger('wheelMove')
+  forwardMove() {
+    this.delta = this.delta + 0.1
+    this.trigger('keydown')
+  }
+
+  backwardMove() {
+    this.delta = this.delta - 0.1
+    this.trigger('keydown')
   }
 
   getDelta() {
