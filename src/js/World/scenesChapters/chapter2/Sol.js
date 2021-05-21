@@ -16,13 +16,6 @@ export default class Sol {
 
     createSol() {
         this.sol = this.assets.models.chap2.Sol.scene
-        this.sol.traverse(n => { if ( n.isMesh ) {
-            n.castShadow = false;
-            n.receiveShadow = true;
-            n.material.depthWrite = !n.material.transparent;
-            if(n.material.map) n.material.map.anisotropy = 16;
-        }});
-
         this.container.add(this.sol)
     }
 

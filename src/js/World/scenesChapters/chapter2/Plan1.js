@@ -16,11 +16,6 @@ export default class Plan1 {
 
   createPlan1() {
     this.plan1 = this.assets.models.chap2.plan1.scene
-    this.plan1.traverse(n => { if ( n.isMesh ) {
-      n.castShadow = true;
-      n.receiveShadow = true;
-      if(n.material.map) n.material.map.anisotropy = 16;
-    }});
     this.container.add(this.plan1)
   }
 

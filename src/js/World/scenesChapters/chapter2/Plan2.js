@@ -15,25 +15,7 @@ export default class Plan2 {
     }
 
     createPlan2() {
-        let loader = new TextureLoader();
-        let clothTexture = loader.load('./arbre.png');
-        clothTexture.anisotropy = 16;
-
         this.plan2 = this.assets.models.chap2.plan2.scene
-
-        this.plan2.customDistanceMaterial = new MeshDistanceMaterial({
-            map: clothTexture,
-            alphaTest: 0.5,
-        });
-
-        this.plan2.traverse(n => {
-            if (n.isMesh) {
-                n.castShadow = true;
-                n.receiveShadow = false;
-                if (n.material.map) n.material.map.anisotropy = 16;
-            }
-        });
-
         this.container.add(this.plan2)
     }
 
