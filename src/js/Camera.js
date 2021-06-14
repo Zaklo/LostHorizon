@@ -14,12 +14,12 @@ export default class Camera {
 
     this.setCamera()
     this.setPosition()
-    this.setOrbitControls()
+    //this.setOrbitControls()
   }
   setCamera() {
     // Create camera
     this.camera = new PerspectiveCamera(
-      75,
+      60,
       this.sizes.viewport.width / this.sizes.viewport.height,
       0.1,
       100

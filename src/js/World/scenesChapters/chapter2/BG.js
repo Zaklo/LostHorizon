@@ -19,13 +19,8 @@ export default class BG {
     this.container.add(this.bg)
   }
 
-  setMovement() {
-    this.time.on('tick', () => {
-      this.bg.rotation.y += 0.005
-    })
-  }
-
   setPosition() {
+    this.bg.scale.z = 2
     this.bg.rotation.y = Math.PI / -2
     this.bg.position.y = -0.5
     this.bg.position.z = -35

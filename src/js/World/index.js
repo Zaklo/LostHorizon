@@ -1,4 +1,4 @@
-import {AxesHelper, Object3D} from 'three'
+import {AxesHelper, CatmullRomCurve3, Object3D, Vector3} from 'three'
 
 import AmbientLightSource from './AmbientLight'
 import PointLightSource from './PointLight'
@@ -6,7 +6,6 @@ import Plan1 from './../World/scenesChapters/chapter2/Plan1'
 import Plan2 from './../World/scenesChapters/chapter2/Plan2'
 import BG from './../World/scenesChapters/chapter2/BG'
 import Character from './Character'
-import MooveCamera from '../Tools/MooveCamera'
 import Snow from "./scenesChapters/chapter2/Snow";
 import Sol from "./scenesChapters/chapter2/Sol";
 
@@ -16,7 +15,6 @@ export default class World {
         this.time = options.time
         this.debug = options.debug
         this.assets = options.assets
-        this.wheel = new MooveCamera()
 
         // Set up
         this.container = new Object3D()
@@ -31,16 +29,12 @@ export default class World {
         this.setLoader()
 
         // this.toggleNDMode()
-        this.wheel.on('keydown', () => {
-            this.MoveCamera()
-        })
     }
 
     init() {
         this.setAmbientLight()
         this.setPointLight()
         this.setPlans()
-        this.setChar()
     }
 
     setLoader() {
@@ -106,24 +100,18 @@ export default class World {
             time: this.time,
             assets: this.assets,
         })
+        this.character = new Character({
+            time: this.time,
+            assets: this.assets,
+            position: this.points,
+        })
         this.container.add(
             this.sol.container,
             this.plan1.container,
             this.plan2.container,
             this.bg.container,
             this.snow.container,
+            this.character.container,
         )
-    }
-
-    setChar() {
-        this.character = new Character({
-            time: this.time,
-            assets: this.assets,
-        })
-        this.container.add(this.character.container)
-    }
-
-    MoveCamera() {
-        this.character.perso.position.x += this.wheel.getDelta() * 0.5
     }
 }
