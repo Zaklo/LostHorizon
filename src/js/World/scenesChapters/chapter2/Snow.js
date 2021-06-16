@@ -37,7 +37,7 @@ export default class Snow {
         const geometry = new BufferGeometry();
         const vertices = [];
 
-        for (let i = 0; i < 4000; i++) {
+        for (let i = 0; i < 7000; i++) {
             vertices.push(
                 Math.random() * 100 - 50,
                 Math.random() * 40 - 20,
