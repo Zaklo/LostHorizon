@@ -1,4 +1,4 @@
-import {Object3D, AnimationMixer, Mesh, MeshBasicMaterial} from 'three'
+import {Object3D} from 'three'
 import gsap from "gsap";
 import MooveCamera from "../../../Tools/MooveCamera";
 
