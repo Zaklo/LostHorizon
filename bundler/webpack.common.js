@@ -32,7 +32,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../src/index.html'),
-      minify: false,
+      minify: true,
     }),
   ],
   module: {
