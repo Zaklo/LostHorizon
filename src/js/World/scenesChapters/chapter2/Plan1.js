@@ -16,7 +16,7 @@ export default class Plan1 {
     this.setPosition()
 
     this.wheel.on('keydown', () => {
-      this.Move()
+      //this.Move()
     })
   }
 
