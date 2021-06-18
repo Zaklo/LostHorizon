@@ -133,6 +133,14 @@ export default class Character {
             gsap.timeline().to(this.perso.rotation, {y: Math.PI / 2})
         }
 
+
+        if (p1.x > 21.922163009643555 && p1.x < 30.495742797851562 && p1.z < 4.60191595832) {
+            document.querySelector('.text1').style.display = "block"
+        }
+        else{
+            document.querySelector('.text1').style.display = "none"
+        }
+
         if (p1.x === 21.088409331423215 && p1.z === 4.602447984017861) {
             gsap.timeline().to(this.perso.rotation, {y: Math.PI / -2})
         }
