@@ -3,8 +3,7 @@
   }
 
   .map{
-    display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-    background-image: url("../img/map.png"); background-size: cover; background-position: center; 
+    display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 3; background-size: cover; background-position: center; 
     &.animate__fadeInUp{ display: block!important; }
 
   }
@@ -13,7 +12,7 @@
   .map_button{
     position: fixed;  
     top: 30px; right: 30px; outline: none; 
-    background: none; background-image: url("../img/boussole.svg"); background-size: contain;  background-position: center; background-repeat: no-repeat; z-index: 10; cursor: pointer;
+    background: none; background-image: url("../img/boussole.svg"); background-size: contain;  background-position: center; background-repeat: no-repeat; z-index: 2; cursor: pointer;
     width: 30px; height: 30px; border: none; transition: all 0.5s; 
 
     &:hover{ transform: rotate(-70deg); }
@@ -22,7 +21,7 @@
   .close_button{
     position: absolute; 
     bottom: 80px; left: 50%; transform: translateX(-50%); outline: none; 
-    background: none; background-image: url("../img/close_button.svg");   background-size: contain;  background-position: center; background-repeat: no-repeat; z-index: 5; cursor: pointer;
+    background: none; background-image: url("../img/close_button.svg");   background-size: contain;  background-position: center; background-repeat: no-repeat; z-index: 3; cursor: pointer;
     width: 30px; height: 30px; border: none; transition: all 0.5s;
 
     &:hover{ transform: translateX(-50%) scale(1.2); }
