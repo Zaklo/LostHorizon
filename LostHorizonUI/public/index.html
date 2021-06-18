@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="css/main.min.css">   
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="img/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>Lost Horizon</title>
+</head>
+<body class="orb-cursor">
+    <div class="cursor"></div>
+    <div class="navigation-top">
+        <div class="logo">
+            <a href="#home" onclick="route('section', 'fadeOut'); noHome(); setTimeout(route, 500, '.home', 'fadeIn');"><img src="img/logo.svg" alt=""><span>LOST HORIZON</span></a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#notes" onclick="route('section', 'fadeOut'); setTimeout(route, 500, '.notes', 'fadeIn');">NOTES</a></li>
+                <li><a href="#credits" onclick="route('section', 'fadeOut'); setTimeout(route, 500, '.credits', 'fadeIn');">CREDITS</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="loader">
+        <a href="javascript:;" onclick="route('section', 'fadeOut'); noHome(); setTimeout(route, 1000, '.home', 'fadeIn(1000)'); launchSound('.home_music');" >Discover the Shangri-la</a>
+    </section>
+
+    <section id="home" class="home">
+        <div class="image-background">
+            <div id="image3d">
+            </div>
+        </div>
+
+        <div class="content">
+
+            <div onclick="launchExperience()" class="title-box">
+                <div id="title-rotate">
+                    <h1 id="title">LOST HORIZON</h1>
+                    <span>Click to begin</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="navigation-bottom">
+            <div class="headphones-message">
+                <span>live a better experience with headphones</span>
+                <img src="img/bx-headphone.svg" alt="">
+            </div>
+        </div>
+
+    </section>
+
+    <section id="book" class="book">
+        <div class="content">
+            <div class="text-content">
+                <div class="fullpage">
+                    <span class="animation-text"><h1>Your notes</h1></span>
+                    <span class="animation-text"><h1>discovered during</h1></span>
+                    <span class="animation-text"><h1>this adventure</h1></span>
+                    
+                    <div class="undertext">
+                        <h3>Based on the book <span class="title-book">lost horizon</span> by <span class="author">james hilton</span></h3>
+                        <a href="#notes" onclick="route('section', 'fadeOut'); setTimeout(route, 500, '.notes', 'fadeIn');">Read your notes</a>
+                    </div>
+                </div>
+                <div class="chap-item"> 
+                    <h3>Chapter 1</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis velit ipsum. Aliquam ultricies est nec leo mattis, sit amet tempus tellus fermentum. Cras nibh felis, mollis eu efficitur ut, molestie sit amet lacus. Pellentesque eleifend mauris sed molestie aliquam. Donec non venenatis nulla. Sed euismod quis massa eget fermentum. Nullam facilisis augue sed felis imperdiet, iaculis placerat nisi tincidunt. Quisque viverra eros vitae pulvinar finibus. Aenean lectus nibh, rhoncus id aliquam et, condimentum nec turpis. Aliquam eget erat vitae sem suscipit dapibus vel id elit. Sed pretium nulla sit amet nunc iaculis pulvinar. Vestibulum odio orci, tincidunt vitae diam vitae, posuere elementum diam. Sed semper nulla eget libero maximus varius. Praesent placerat elit eget sem luctus interdum. <br><br>
+
+                    In tincidunt nulla quam, cursus pretium leo volutpat eget. Donec fermentum, dolor nec euismod sodales, eros turpis mattis lorem, non porta nulla est ut lectus. Pellentesque suscipit sem orci, a vehicula justo ullamcorper sed. Mauris venenatis dolor mattis, scelerisque urna sed, facilisis leo. Proin dapibus eu metus a ultricies. Fusce in augue euismod, gravida tellus non, sagittis nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nunc massa, eleifend ut augue pellentesque, lobortis ultrices lorem. Praesent ornare ligula ut lectus interdum, sed suscipit elit cursus. <br><br>
+                        
+                    Proin mattis hendrerit justo, et dapibus mi euismod lacinia. Quisque pharetra turpis at convallis egestas. Cras bibendum nunc orci, vitae elementum justo dictum et. Curabitur rhoncus diam non mi sodales ultrices. Sed eleifend nibh at tellus aliquam congue. Morbi et sem ullamcorper, facilisis lectus a, mollis nibh. Proin at accumsan nibh. Nunc orci libero, efficitur eu imperdiet id, tincidunt non massa. Sed aliquet efficitur neque finibus placerat. Nunc pulvinar, eros malesuada tincidunt convallis, tellus lorem pellentesque metus, ac interdum ex dolor vel nulla. Etiam elementum turpis risus, in aliquet nulla pulvinar eget. Nulla vitae mauris at eros molestie aliquet. <br><br>
+                        
+                    Sed vehicula felis vel finibus imperdiet. Ut aliquam non odio tempor mattis. Quisque dignissim ac elit et molestie. Donec mollis interdum urna vitae auctor. Etiam id bibendum neque. Praesent fermentum viverra convallis. Praesent lobortis lectus vel semper vestibulum. Sed in auctor lectus.
+                </p>
+                </div>
+        </div>
+    </section>
+
+
+    <section id="notes" class="notes">
+        <div class="content">
+            <div class="text-content">
+                <div class="fullpage">
+                    <span class="animation-text"><h1>Your notes</h1></span>
+                    <span class="animation-text"><h1>discovered during</h1></span>
+                    <span class="animation-text"><h1>this adventure</h1></span>
+                    
+                    <div class="undertext">
+                        <h3>Based on the book <span class="title-book">lost horizon</span> by <span class="author">james hilton</span></h3>
+                        <a href="#book" onclick="route('section', 'fadeOut'); setTimeout(route, 500, '.book', 'fadeIn');">Discover the book</a>
+                    </div>
+                </div>
+                <div class="chap-item"> 
+                    <h3>Chapter 1</h3>
+                    <i>You forgot a note during your trip</i>
+                </div>
+                <div class="chap-item"> 
+                    <h3>Chapter 2</h3>
+                    <i>You forgot a note during your trip</i>
+                </div>
+                <div class="chap-item"> 
+                    <h3>Chapter 3</h3>
+                    <i>You forgot a note during your trip</i>
+                </div>
+                <div class="chap-item"> 
+                    <h3>Chapter 4</h3>
+                    <i>You forgot a note during your trip</i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="credits" class="credits">
+        <div class="content">
+            <div class="text-content">
+                <div class="fullpage">
+                    <span class="animation-text"><h1>student project of</h1></span>
+                    <span class="animation-text"><h1>the gobelins</h1></span>
+                    <span class="animation-text"><h1>school</h1></span>
+                    
+                    <div class="contributors undertext">
+                        <div class="item">
+                            <h3>Creative development</h3>
+                            <p>Antoine Lozach</p>
+                            <p>Clément Savary</p>
+                        </div>
+                        <div class="item">
+                            <h3>Art direction</h3>
+                            <p>Axel Crouilbois</p>
+                            <p>Thomas Bagnolati</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <button class="sound-button" onclick="muteAudio()"></button>
+    <audio autoplay class="home_music" id="homemusic" src="files/home.wav" loop></audio>
+
+</body>
+
+<script src="js/main.js"></script>
+<script src="js/functions.js"></script> 
+<script src="js/main.min.js"></script> 
+<script src="js/orb_pointer.js"></script> 
+
+
+</html>

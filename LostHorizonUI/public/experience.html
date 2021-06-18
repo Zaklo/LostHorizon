@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="css/main.min.css">   
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="img/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>Lost Horizon</title>
+</head>
+<body>
+    
+    <section class="choose-orbe">
+        <div class="items">
+            <div class="item animation-text">
+                <a id="blue_button" href="javascript:;" onclick="launchSound('.intro_music'); cinematic(); route('section', 'fadeOut'); setTimeout(route, 500, '.cinematique', 'fadeIn');">Blue</a>
+            </div>
+            <div class="item animation-text">
+                <a id="green_button" href="javascript:;" onclick="launchSound('.intro_music'); cinematic(); route('section', 'fadeOut'); setTimeout(route, 500, '.cinematique', 'fadeIn');">Green</a>
+            </div>
+            <div class="item animation-text">
+                <a id="red_button" href="javascript:;" onclick="launchSound('.intro_music'); cinematic(); route('section', 'fadeOut'); setTimeout(route, 500, '.cinematique', 'fadeIn');">Red</a>
+            </div>
+        </div>
+        <span class="message-bottom">What Color Is Your Soul?</span>
+    </section>
+
+    <section class="cinematique">
+        <div class="content">
+            <h1 class="cinematic_1">An adaptation of the novel Lost Horizon by James Hilton.</h1>
+            <h1 class="cinematic_2">Some facts have been altered for the sake of the narrative.</h1>
+            <h1 class="cinematic_3">Year 1933, somewhere in Tibet...</h1>
+
+            <h1 class="cinematic_4">Use your keyboard to move around.</h1>
+            <h1 class="cinematic_5">Use your mouse to make choice during the experiment.</h1>
+            <h1 class="cinematic_6">CHAPTER 1 - THE CRASH</h1>
+        </div>
+
+        <span class="message-bottom">Click and hold to skip the introduction</span>
+    </section>
+        
+    <button class="sound-button" onclick="muteAudio()"></button>
+    <video src="files/cinematic.webm" id="video_cinematic" muted></video>
+
+    <audio class="intro_music" id="intromusic" src="files/son_intro.mp3"></audio>
+
+</body>
+
+
+<script src="js/main.js"></script>
+<script src="js/functions.js"></script> 
+<script src="js/main.min.js"></script> 
+<script src="js/ring_pointer.js"></script> 
+
+
+</html>

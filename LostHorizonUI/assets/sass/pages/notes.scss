@@ -1,0 +1,64 @@
+.notes, .credits, .book{
+    display: none;
+
+    @keyframes slidein{
+        from { top: 200px; }
+        to { top: 0; }
+    }
+
+    @keyframes fadeText{
+        10% { opacity: 0; }
+        50% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    .content{
+        overflow: auto; z-index: 11;
+        .navigation-top{
+            .logo{ position: absolute; top: 50%; left: 150px; transform: translateY(-50%); 
+                a { img{ height: 100%; width: 50px; height: 50px;} }
+                span{ text-transform: uppercase; color: $white; margin-left: 15px; letter-spacing: 1px; }
+            }
+        }
+        .text-content{
+            margin-left: 120px; margin-right: 120px;
+            .undertext{
+                opacity: 0; animation-name: fadeText; animation-duration: 3s; animation-fill-mode: forwards;
+            }
+            .fullpage{
+                height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 40px;
+                .animation-text{ 
+                    position: relative; overflow: hidden; height: 110px; display: inline-block; color: white;
+                    h1, h2, h3, span{ animation-name: slidein; position: absolute; animation-duration: 2s; font-weight: 400; }
+                }
+                h1{ display: inline-block; text-align: left; line-height: 1.4; font-family: 'Larken'; text-transform: uppercase; letter-spacing: 2px; font-size: rem(70px); }
+                h3{ font-family: 'Larken'; text-transform: uppercase; letter-spacing: 2px; margin-top: 40px; font-size: rem(20px); color: white; }
+                .title-book{ border-bottom: 2px solid white; }
+                .author{ font-family: $font-family-base; }
+                a{ 
+                    position: relative; font-family: $font-family-base; font-size: rem(12px); color: white; text-transform: uppercase; max-width: max-content; display: inline-block; margin-top: 10px;
+                    &::after{ 
+                        content: ''; position: absolute; right: -70px; top: 50%; transform: translateY(-50%); background-image: url('/public/img/bx-right-arrow-alt.svg'); background-repeat: no-repeat; background-position: center; background-size: contain; width: 36px; height: 14px;
+                    }
+                }
+                .contributors{ 
+                    display: flex;
+                    .item{ 
+                        margin-right: 80px;
+                        h3{ border-bottom: 1.5px solid white; display: inline-block; margin-bottom: 20px; }
+                        p{ color: white; text-transform: uppercase; font-weight: 500; font-size: rem(12px); }
+                        &:last-child{ margin-right: 0; } 
+                    }
+                }
+            }
+
+            .chap-item{
+                padding: 50px 0 50px 0;
+                h3{ font-family: 'Larken'; text-transform: uppercase; letter-spacing: 2px; font-size: rem(20px); color: white; }
+                i{ color: white; font-weight: 200; font-style: italic; }
+                p{ font-weight: 500; max-width: 70%; color: white; }
+
+            }
+        }
+    }
+}

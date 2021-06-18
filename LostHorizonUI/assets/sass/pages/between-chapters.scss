@@ -1,0 +1,6 @@
+.between-chapters{
+    display: flex; justify-content: center; align-items: center; flex-direction: column; height: 100vh; padding: 0 20% 0 20%; text-align: center;
+
+    h1{ display: inline-block; font-size: rem(30px); font-family: 'Larken', sans-serif; font-weight: 700; font-style: italic; color: #D6BC96;}
+    a{ display: inline-block; margin-top: 80px; font-size: rem(30px); text-transform: uppercase; text-decoration: underline; font-family: 'Larken', sans-serif; color: white; }
+} 
