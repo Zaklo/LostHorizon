@@ -32,20 +32,11 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../src/index.html'),
-      minify: true,
+      minify: false,
     }),
   ],
   module: {
     rules: [
-      {
-        test: /\.(jpg|png|gif|svg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: { outputPath: 'assets/images/' },
-          },
-        ],
-      },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
@@ -55,10 +46,7 @@ module.exports = {
           },
         ],
       },
-      {
-        test: /\.(html)$/,
-        use: ['html-loader'],
-      },
+
       {
         test: /\.(js)$/,
         exclude: /node_modules/,

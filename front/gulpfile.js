@@ -6,8 +6,8 @@ var plugins = require('gulp-load-plugins')({
   'scope': ['dependencies','devDependencies']
 });
 
-gulp.task('sass:front', require('./tasks/sass')(gulp, plugins, 'main', '../public/css', false));
-gulp.task('webpack:main', require('./tasks/webpack')(gulp, plugins, 'main', '../public/js'));
+gulp.task('sass:front', require('./tasks/sass')(gulp, plugins, 'main', '../dist/css', false));
+gulp.task('webpack:main', require('./tasks/webpack')(gulp, plugins, 'main', '../dist/js'));
 gulp.task('copy-vendor', require('./tasks/copy-vendor')(gulp, plugins));
 
 

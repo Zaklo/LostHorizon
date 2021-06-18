@@ -4,6 +4,6 @@ module.exports = function (gulp, plugins) {
   return function () {
     return gulp.src('img/data-img/*')
       .pipe(tiny())
-      .pipe(gulp.dest('../public/img/'))
+      .pipe(gulp.dest('../dist/img/'))
   };
 };

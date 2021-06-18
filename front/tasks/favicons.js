@@ -5,8 +5,8 @@ module.exports = function (gulp, plugins) {
   return function (done) {
   realFavicon.generateFavicon({
       masterPicture: 'img/favicon/favicon.png',
-      dest: '../public/img/favicons/',
-      iconsPath: 'public/img/favicons/',
+      dest: '../dist/img/favicons/',
+      iconsPath: 'dist/img/favicons/',
       design: {
         ios: {
           pictureAspect: 'noChange',
