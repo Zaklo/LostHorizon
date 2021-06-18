@@ -31,6 +31,7 @@ export default class BG {
         this.bg.scale.y = 2
         this.bg.scale.z = 2
 
+        this.bg.position.x = -5
         this.bg.rotation.y = Math.PI / -2
         this.bg.position.y = -0.5
         this.bg.position.z = -63

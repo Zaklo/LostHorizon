@@ -138,7 +138,7 @@ export default class Camera {
     let p1 = this.curvePath.getPointAt(this.percentage % 1);
     let p2 = this.curvePath.getPointAt((this.percentage + 0.01) % 1);
 
-    gsap.timeline().to(this.camera.position ,{x: p1.x - 13.3, y: p1.y + 1 })
+    gsap.timeline().to(this.camera.position ,{x: p1.x - 13.3, y: p1.y + 1, z: p1.z - 6.7})
 
     this.camera.updateProjectionMatrix();
   }

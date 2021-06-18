@@ -99,7 +99,7 @@ export default class Character {
         clips.forEach((clip) => {
             this.mixer.clipAction(clip).play();
         });
-        console.log(this.perso)
+
         this.container.add(this.perso)
     }
 
