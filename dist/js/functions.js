@@ -24,6 +24,12 @@ document.getElementById("title").onmouseout = event => {
 }
 
 
+document.querySelector(".map_button").onclick = event => {
+  document.querySelector(".map").classList.add("animate__fadeInUp");
+}
+
+
+
 function launchSound(element){
   document.querySelector(element).play();
 }
