@@ -5,9 +5,7 @@
   .map{
     display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 3; background-size: cover; background-position: center; 
     &.animate__fadeInUp{ display: block!important; }
-
   }
-
 
   .map_button{
     position: fixed;  
@@ -20,7 +18,7 @@
 
   .close_button{
     position: absolute; 
-    bottom: 80px; left: 50%; transform: translateX(-50%); outline: none; 
+    bottom: 50px; left: 50%; transform: translateX(-50%); outline: none; 
     background: none; background-image: url("../img/close_button.svg");   background-size: contain;  background-position: center; background-repeat: no-repeat; z-index: 3; cursor: pointer;
     width: 30px; height: 30px; border: none; transition: all 0.5s;
 

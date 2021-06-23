@@ -1,27 +1,32 @@
-document.getElementById("title").onmousemove = event => {
+document.getElementById("title-rotate").onmousemove = event => {
   document.querySelector(".image-background").style.background = "none";
+  document.getElementById("image3d").classList.add('initial_background');
   document.querySelector(".cursor").style.background= "none!important";
 }
+
+document.getElementById("title-rotate").onmouseout = event => {
+  document.querySelector(".image-background").style.background = "rgba(0,0,0,.3)";
+  document.getElementById("image3d").classList.remove('initial_background');
+}
+
 
 
 document.onmousemove = event => {
   let valX = (100 * event.clientX / window.innerWidth) / 100 * 2 - 1;
   let valY = (100 * event.clientY / window.innerHeight) / 100  * 2 - 1;
 
-  document.getElementById("image3d").style.setProperty('transform', "perspective(100px) rotateX(" + valY + "deg) rotateY(" + (-valX) + "deg) scale(1.4)");
+  document.getElementById("image3d").style.setProperty('transform', "perspective(100px) rotateX(" + valY + "deg) rotateY(" + (-valX) * 2 + "deg) scale(1.4)");
 
-  document.getElementById("title-rotate").style.setProperty('transform', "perspective(100px) rotateX(" + valY * 5 + "deg) rotateY(" + (-valX) * 3 + "deg) scale(1)");
+  document.getElementById("title-rotate").style.setProperty('transform', "perspective(100px) rotateX(" + valY * 5 + "deg) rotateY(" + (-valX) * 5 + "deg) scale(1)");
 }
 
 document.onmouseout = event => {
-  document.getElementById("image3d").style.setProperty('transform', "perspective(100px) rotateX(0deg) rotateY(0deg) scale(1.5)");
+  document.getElementById("image3d").style.setProperty('transform', "perspective(100px) rotateX(0deg) rotateY(0deg) scale(1.4)");
   document.getElementById("title").style.setProperty('transform', "perspective(100px) rotateX(0deg) rotateY(0deg) scale(1)");
 }
 
 
-document.getElementById("title").onmouseout = event => {
-  document.querySelector(".image-background").style.background = "rgba(0,0,0,.6)";
-}
+
 
 
 document.querySelector(".map_button").onclick = event => {
@@ -114,7 +119,6 @@ function launchExperience(){
   $( ".home .content" ).fadeOut();
   $( ".navigation-bottom" ).fadeOut();
   $( ".image-background" ).addClass('animation_enter');
-  
   setTimeout(function(){ window.location.replace('experience.html'); }, 2000 );
 
 }
