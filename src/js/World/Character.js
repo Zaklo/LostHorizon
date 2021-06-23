@@ -133,12 +133,39 @@ export default class Character {
             gsap.timeline().to(this.perso.rotation, {y: Math.PI / 2})
         }
 
-
-        if (p1.x > 21.922163009643555 && p1.x < 30.495742797851562 && p1.z < 4.60191595832) {
-            document.querySelector('.text1').style.display = "block"
+        if (p1.x > 3.018 && p1.x < 14.058) {
+            document.querySelector('.ch2_1').style.display = "block"
         }
         else{
-            document.querySelector('.text1').style.display = "none"
+            document.querySelector('.ch2_1').style.display = "none"
+        }
+
+        if (p1.x > 20 && p1.x < 23.512) {
+            document.querySelector('.ch2_2').style.display = "block"
+        }
+        else{
+            document.querySelector('.ch2_2').style.display = "none"
+        }
+
+        if (p1.x > 21.922163009643555 && p1.x < 30.495742797851562 && p1.z < 4.60191595832) {
+            document.querySelector('.ch2_3').style.display = "block"
+        }
+        else{
+            document.querySelector('.ch2_3').style.display = "none"
+        }
+
+        if (p1.x > 38.92 && p1.x < 42.444 && p1.z > 1.5 && p1.z < 3) {
+            document.querySelector('.ch2_4').style.display = "block"
+        }
+        else{
+            document.querySelector('.ch2_4').style.display = "none"
+        }
+
+        if (p1.x > 42.582 && p1.x < 49.966 & p1.z > 5) {
+            document.querySelector('.ch2_8').style.display = "block"
+        }
+        else{
+            document.querySelector('.ch2_8').style.display = "none"
         }
 
         if (p1.x === 21.088409331423215 && p1.z === 4.602447984017861) {
