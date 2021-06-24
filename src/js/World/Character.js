@@ -67,33 +67,60 @@ export default class Character {
         //let p2 = this.curvePath.getPointAt((this.percentage + 0.01) % 1);
 
         gsap.timeline().to(this.perso.position, {x: p1.x, y: p1.y , z: p1.z})
-        /*
-                if (p1.x === 23.501121677200647 && p1.z === 5.741706626191953) {
-                    gsap.timeline().to(this.perso.rotation, {y: Math.PI / 2})
-                }
+        
+        if (p1.x === 23.501121677200647 && p1.z === 5.741706626191953) {
+            gsap.timeline().to(this.perso.rotation, {y: Math.PI / 2})
+        }
+
+        if (p1.x > 3.018 && p1.x < 14.058) {
+            document.querySelector('.ch2_1').style.display = "block"
+        }
+        else{
+            document.querySelector('.ch2_1').style.display = "none"
+        }
+
+        if (p1.x > 20 && p1.x < 23.512) {
+            document.querySelector('.ch2_2').style.display = "block"
+        }
+        else{
+            document.querySelector('.ch2_2').style.display = "none"
+        }
+
+        if (p1.x > 21.922163009643555 && p1.x < 30.495742797851562 && p1.z < 4.60191595832) {
+            document.querySelector('.ch2_3').style.display = "block"
+        }
+        else{
+            document.querySelector('.ch2_3').style.display = "none"
+        }
+
+        if (p1.x > 38.92 && p1.x < 42.444 && p1.z > 1.5 && p1.z < 3) {
+            document.querySelector('.ch2_4').style.display = "block"
+        }
+        else{
+            document.querySelector('.ch2_4').style.display = "none"
+        }
+
+        if (p1.x > 42.582 && p1.x < 49.966 & p1.z > 5) {
+            document.querySelector('.ch2_8').style.display = "block"
+        }
+        else{
+            document.querySelector('.ch2_8').style.display = "none"
+        }
+
+        if (p1.x === 21.088409331423215 && p1.z === 4.602447984017861) {
+            gsap.timeline().to(this.perso.rotation, {y: Math.PI / -2})
+        }
+
+        if (p1.x === 47.86300163149727 && p1.z === 1.5783586098214515) {
+            gsap.timeline().to(this.perso.rotation, {y: Math.PI / 2})
+        }
+
+        if (p1.x === 36.96768983024135 && p1.z === 2.879518983922841) {
+            gsap.timeline().to(this.perso.rotation, {y: Math.PI / -2})
+        }
 
 
-                if (p1.x > 21.922163009643555 && p1.x < 30.495742797851562 && p1.z < 4.60191595832) {
-                    document.querySelector('.text1').style.display = "block"
-                }
-                else{
-                    document.querySelector('.text1').style.display = "none"
-                }
-
-                if (p1.x === 21.088409331423215 && p1.z === 4.602447984017861) {
-                    gsap.timeline().to(this.perso.rotation, {y: Math.PI / -2})
-                }
-
-                if (p1.x === 47.86300163149727 && p1.z === 1.5783586098214515) {
-                    gsap.timeline().to(this.perso.rotation, {y: Math.PI / 2})
-                }
-
-                if (p1.x === 36.96768983024135 && p1.z === 2.879518983922841) {
-                    gsap.timeline().to(this.perso.rotation, {y: Math.PI / -2})
-                }*/
-
-
-        /*
+ 
         document.addEventListener('keydown', (event) => {
             const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
             switch (event.key) {
@@ -104,6 +131,6 @@ export default class Character {
                     this.perso.rotation.y = Math.PI / -2
                     break;
             }
-        });*/
+        });
     }
 }

@@ -22,15 +22,35 @@
     <link rel="icon" type="image/png" sizes="96x96" href="img/favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
     <link rel="manifest" href="img/favicons/manifest.json">
-    <script defer="defer" src="bundle.56562cbcabf3a9e80438.js"></script>
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="img/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <title>Lost Horizon</title>
 </head>
-
 <body>
-    <div class="loadScreen"><h1 class="load">0%</h1><div class="progressBar"><div class="progress"></div></div></div>
+    <div class="loadScreen">
+      <h1 class="load">0%</h1>
+      <div class="progressBar">
+        <div class="progress"></div>
+      </div>
+    </div>
+
+
+    <button class="map_button"></button>
+
     <canvas id="_canvas"></canvas>
 
+    <div class="text1">Ceci est un texte juste pour faire un petit test avec Three</div>
+
+    <div class="map animate__animated" style="background-image: url('img/map_ch2.png');">
+      <button class="close_button"></button>
+
+      <figure class="cloud_1"></figure>
+    </div>
+
 </body>
+
+<script src="js/main.js"></script>
+<script src="js/main.min.js"></script> 
+<script src="js/ring_pointer.js"></script> 
+</html>
