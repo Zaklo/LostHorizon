@@ -1,10 +1,9 @@
-import {Object3D, AnimationMixer, Clock, Vector3, CatmullRomCurve3} from 'three'
-import MooveCamera from "../Tools/MooveCamera";
+import {Object3D, AnimationMixer, Clock} from 'three'
+import MooveCamera from "../../../Tools/MooveCamera";
 import gsap from "gsap";
-import splineChap1 from "./scenesChapters/chapter1/splineChap1";
-import splineChap2 from "./scenesChapters/chapter2/splineChap2";
+import splineChap1 from "../chapter1/splineChap1";
 
-export default class Character {
+export default class CharacterCh1 {
     constructor(options) {
         // Options
         this.time = options.time
@@ -66,8 +65,8 @@ export default class Character {
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
         //let p2 = this.curvePath.getPointAt((this.percentage + 0.01) % 1);
 
-        gsap.timeline().to(this.perso.position, {x: p1.x, y: p1.y , z: p1.z})
-        
+        gsap.timeline().to(this.perso.position, {x: p1.x, y: p1.y - 0.1, z: p1.z})
+
         if (p1.x === 23.501121677200647 && p1.z === 5.741706626191953) {
             gsap.timeline().to(this.perso.rotation, {y: Math.PI / 2})
         }
@@ -100,7 +99,7 @@ export default class Character {
             document.querySelector('.ch2_4').style.display = "none"
         }
 
-        if (p1.x > 42.582 && p1.x < 49.966 & p1.z > 5) {
+        if (p1.x > 42.582 && p1.x < 49.966 && p1.z > 5) {
             document.querySelector('.ch2_8').style.display = "block"
         }
         else{
@@ -120,7 +119,7 @@ export default class Character {
         }
 
 
- 
+
         document.addEventListener('keydown', (event) => {
             const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
             switch (event.key) {

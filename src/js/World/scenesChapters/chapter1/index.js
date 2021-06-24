@@ -5,7 +5,7 @@ import PointLightSource from '../../PointLight'
 import Plan1 from './../../../World/scenesChapters/chapter1/Plan1'
 import Plan2 from './../../../World/scenesChapters/chapter1/Plan2'
 import BG from './../../../World/scenesChapters/chapter1/BG'
-import Character from '../../Character'
+import CharacterCh1 from './CharacterCh1'
 import Sol from "../../scenesChapters/chapter1/Sol";
 
 export default class Chapter1 {
@@ -93,7 +93,7 @@ export default class Chapter1 {
             time: this.time,
             assets: this.assets,
         })
-        this.character = new Character({
+        this.character = new CharacterCh1({
             time: this.time,
             assets: this.assets,
         })

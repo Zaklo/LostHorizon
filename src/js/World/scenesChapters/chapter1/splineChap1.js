@@ -45,7 +45,7 @@ export default function createSpline() {
 
     for (let i = 0; i < points.length; i++) {
         let y = points[i][0] + 0.9
-        let x = points[i][1] - 10
+        let x = points[i][1] - 10.3
         let z = points[i][2] + 1
         points[i] = new Vector3(x, z, y);
     }
