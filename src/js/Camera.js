@@ -1,4 +1,4 @@
-import {CatmullRomCurve3, Object3D, PerspectiveCamera, Vector3} from 'three'
+import { Object3D, PerspectiveCamera } from 'three'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import MooveCamera from "./Tools/MooveCamera";
 import gsap from 'gsap';

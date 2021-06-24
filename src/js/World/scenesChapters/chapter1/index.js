@@ -15,10 +15,6 @@ export default class Chapter1 {
         this.debug = options.debug
         this.assets = options.assets
 
-        this.spline = [
-
-        ]
-
         // Set up
         this.container = new Object3D()
         this.container.name = 'Chapter1'
