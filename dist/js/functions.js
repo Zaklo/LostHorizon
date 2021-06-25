@@ -61,10 +61,12 @@ function cinematic(){
           }, 500 );
 
           setTimeout(function(){
+            $("#video_cinematic").fadeOut();
             $(".cinematic_4").fadeIn();
             setTimeout(function(){
               $(".cinematic_4").fadeOut();
-              setTimeout(function(){ $(".cinematic_5").fadeIn(); }, 500 );
+              setTimeout(function(){ 
+                $(".cinematic_5").fadeIn(); }, 500 );
                 setTimeout(function(){ 
                   $(".cinematic_5").fadeOut(); 
                     setTimeout(function(){ 
@@ -73,7 +75,7 @@ function cinematic(){
                         $(".cinematic_6").fadeOut(); 
                         setTimeout(function(){ $(".scenes").fadeIn(); }, 500 );
                         launchSound('#music_chap_1');
-                      }, 6000 );
+                      }, 9000 );
                     }, 500 );
                 }, 6000 );
 

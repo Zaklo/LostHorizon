@@ -67,9 +67,27 @@ export default class CharacterCh1 {
 
         gsap.timeline().to(this.perso.position, {x: p1.x, y: p1.y - 0.1, z: p1.z})
 
+        console.log(p1)
+
         if (p1.x === 23.501121677200647 && p1.z === 5.741706626191953) {
             gsap.timeline().to(this.perso.rotation, {y: Math.PI / 2})
         }
+
+        if (p1.x > -7.90 && p1.x < -5) {
+            document.querySelector('.ch1_1').style.display = "block"
+        } else {
+            document.querySelector('.ch1_1').style.display = "none"
+        }
+
+        if (p1.x > 0.210222 && p1.x < 0.22) {
+            document.querySelector('.ch1_2').style.display = "block"
+        } else {
+            document.querySelector('.ch1_2').style.display = "none"
+        }
+
+
+
+        
 
         document.addEventListener('keydown', (event) => {
             const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
