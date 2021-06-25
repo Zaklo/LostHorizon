@@ -119,8 +119,6 @@ export default class CharacterCh2 {
             gsap.timeline().to(this.perso.rotation, {y: Math.PI / -2})
         }
 
-
-
         document.addEventListener('keydown', (event) => {
             const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
             switch (event.key) {

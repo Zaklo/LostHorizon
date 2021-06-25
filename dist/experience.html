@@ -25,10 +25,11 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="img/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <script defer="defer" src="bundle.56562cbcabf3a9e80438.js"></script>
     <title>Lost Horizon</title>
 </head>
 <body>
-    
+      
     <section class="choose-orbe">
         <div class="items">
             <div class="item animation-text">
@@ -57,11 +58,54 @@
 
         <span class="message-bottom">Click and hold to skip the introduction</span>
     </section>
+
+    <section class="scenes">
+        <div class="loadScreen">
+            <h1 class="load">0%</h1>
+            <div class="progressBar">
+              <div class="progress"></div>
+            </div>
+          </div>
+
+        <button class="map_button"></button>
+
+        <canvas id="_canvas"></canvas>
+
+        <div class="container-ui ch2_1">
+          <span class="text">ch2_1</span>
+        </div>
+    
+        <div class="container-ui ch2_2">
+          <span class="text">ch2_2</span>
+          <button></button>
+        </div>
+    
+        <div class="container-ui ch2_3">
+          <span class="text">ch2_3</span>
+        </div>
+    
+        <div class="container-ui ch2_4">
+          <span class="text">ch2_4</span>
+          
+        </div>
+    
+        <div class="container-ui ch2_8">
+          <span class="text">ch2_8</span>
+        </div>
+    
+        <div class="map animate__animated" style="background-image: url('img/map_ch2.png');">
+          <button class="close_button"></button>
+          <figure class="cloud_1"></figure>
+        </div>
+    </section>
+    
         
     <button class="sound-button" onclick="muteAudio()"></button>
     <video src="files/cinematic.webm" id="video_cinematic" muted></video>
 
     <audio class="intro_music" id="intromusic" src="files/son_intro.mp3"></audio>
+
+    <audio class="music_chap_1" id="music_chap_1" src="files/music_chap1.wav" loop></audio>
 
 </body>
 
