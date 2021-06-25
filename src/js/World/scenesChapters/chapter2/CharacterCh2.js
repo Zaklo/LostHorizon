@@ -1,7 +1,6 @@
-import {Object3D, AnimationMixer, Clock, Vector3, CatmullRomCurve3} from 'three'
+import {Object3D, AnimationMixer, Clock} from 'three'
 import MooveCamera from "../../../Tools/MooveCamera";
 import gsap from "gsap";
-import splineChap1 from "../chapter1/splineChap1";
 import splineChap2 from "./splineChap2";
 
 export default class CharacterCh2 {
@@ -17,7 +16,7 @@ export default class CharacterCh2 {
 
 
 //========== Create a path from the points
-        this.curvePath = splineChap1();
+        this.curvePath = splineChap2();
 
         // Set up
         this.container = new Object3D()
@@ -66,7 +65,7 @@ export default class CharacterCh2 {
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
         //let p2 = this.curvePath.getPointAt((this.percentage + 0.01) % 1);
 
-        gsap.timeline().to(this.perso.position, {x: p1.x, y: p1.y - 0.1, z: p1.z})
+        gsap.timeline().to(this.perso.position, {x: p1.x - 13.3, y: p1.y - 0.1, z: p1.z - 4})
 
         if (p1.x === 23.501121677200647 && p1.z === 5.741706626191953) {
             gsap.timeline().to(this.perso.rotation, {y: Math.PI / 2})
@@ -74,36 +73,31 @@ export default class CharacterCh2 {
 
         if (p1.x > 3.018 && p1.x < 14.058) {
             document.querySelector('.ch2_1').style.display = "block"
-        }
-        else{
+        } else {
             document.querySelector('.ch2_1').style.display = "none"
         }
 
         if (p1.x > 20 && p1.x < 23.512) {
             document.querySelector('.ch2_2').style.display = "block"
-        }
-        else{
+        } else {
             document.querySelector('.ch2_2').style.display = "none"
         }
 
         if (p1.x > 21.922163009643555 && p1.x < 30.495742797851562 && p1.z < 4.60191595832) {
             document.querySelector('.ch2_3').style.display = "block"
-        }
-        else{
+        } else {
             document.querySelector('.ch2_3').style.display = "none"
         }
 
         if (p1.x > 38.92 && p1.x < 42.444 && p1.z > 1.5 && p1.z < 3) {
             document.querySelector('.ch2_4').style.display = "block"
-        }
-        else{
+        } else {
             document.querySelector('.ch2_4').style.display = "none"
         }
 
         if (p1.x > 42.582 && p1.x < 49.966 && p1.z > 5) {
             document.querySelector('.ch2_8').style.display = "block"
-        }
-        else{
+        } else {
             document.querySelector('.ch2_8').style.display = "none"
         }
 
@@ -118,7 +112,6 @@ export default class CharacterCh2 {
         if (p1.x === 36.96768983024135 && p1.z === 2.879518983922841) {
             gsap.timeline().to(this.perso.rotation, {y: Math.PI / -2})
         }
-
 
 
         document.addEventListener('keydown', (event) => {
