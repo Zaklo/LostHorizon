@@ -5,7 +5,7 @@ const path = require('path')
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'bundle.[fullhash].js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, '../dist'),
   },
   resolve: {
@@ -32,7 +32,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '../src/index.html'),
-      minify: true,
+      minify: false,
     }),
   ],
   module: {
