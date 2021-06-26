@@ -5,7 +5,7 @@ document.getElementById("title-rotate").onmousemove = event => {
 }
 
 document.getElementById("title-rotate").onmouseout = event => {
-  document.querySelector(".image-background").style.background = "rgba(0,0,0,.3)";
+  document.querySelector(".image-background").style.background = "rgba(0,0,0,.6)";
   document.getElementById("image3d").classList.remove('initial_background');
 }
 
@@ -78,17 +78,11 @@ function cinematic(){
                       }, 9000 );
                     }, 500 );
                 }, 6000 );
-
             }, 6000);
-        
           }, 29000);
-      
         }, 9000);
-    
       }, 8000);
-  
     }, 8000);
-
   }, 2000);
 }
 

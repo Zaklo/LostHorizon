@@ -3,7 +3,7 @@
     z-index: 1000; position: fixed; background: black;
     height: 100vh; width: 100vw;
 
-    a{ position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; padding: 20px 30px; border: 1px solid white; text-decoration: none; text-transform: uppercase;
+    a{ position: absolute; display: block; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white;  border: 1px solid white; text-decoration: none; text-transform: uppercase; border-radius: 100%; font-family: 'Larken'; font-weight: 600; padding: 50px; font-size: rem(20px); padding: 50px 35px;
     
         &:hover{ background: white; color: black;}
     

@@ -14,14 +14,14 @@
 .home{
     display: none; 
     .image-background{ 
-        transition: all 0.5s; width: 100vw; height: 100vh; overflow: hidden; position: relative; background: rgba($color: #000000, $alpha: 0.3); box-shadow: inset 0 0 100px black; 
+        transition: all 0.5s; width: 100vw; height: 100vh; overflow: hidden; position: relative; background: rgba($color: #000000, $alpha: 0.6); box-shadow: inset 0 0 100px black; 
         
         &::before{
             content: ''; background-image: url("../img/background.png"); filter: blur(200px); position: absolute; width: 100vw; height: 100vh; z-index: -2; background-size: cover; background-repeat: no-repeat; background: rgba($color: #000000, $alpha: 0.5);
         }
 
         .initial_background{
-            transform: perspective(100px) rotateY(0deg) rotateX(0deg) scale(1)!important; transition: all 0.5s;
+            transform: perspective(100px) rotateY(0deg) rotateX(0deg) scale(1)!important; transition: all 0.8s!important;
         }
     
         #image3d{ 
@@ -39,10 +39,10 @@
         }
 
         .title-box{
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer; transition: all 0.4s;
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); cursor: pointer; transition: all 0.8s;
             #title{ font-family: 'Larken'; font-weight: 200; font-size:rem(50px) ; letter-spacing: 2px; }
             span{ display: block; text-transform: uppercase; color: white; text-align: center; margin: 0 auto;}
-            &:hover{ transform: translate(-50%, -50%) scale(1.1);} 
+            &:hover{ transform: translate(-50%, -50%) scale(1.15);} 
         }
         h1{ text-align: center; display: block; transition: all 0.2s; text-align: center; color: white; }
     }
