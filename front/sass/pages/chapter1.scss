@@ -1,7 +1,17 @@
 .chapter1-container{
 
+
+
+
 .scenes{
     position: fixed; display: none; width: 100vw; height: 100vh; top: 0; left: 0; z-index: 9000;
+
+    .map_button{         
+        display: none; 
+        &.animate__fadeInDown{
+            display: block!important;
+        }
+    }
 
     @keyframes fadeOutScene{
         from { opacity: 1; }

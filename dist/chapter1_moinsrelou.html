@@ -29,37 +29,7 @@
     <title>Lost Horizon</title>
 </head>
 <body class="chapter1-container">
-      
-    <section class="choose-orbe">
-        <div class="items">
-            <div class="item animation-text">
-                <a id="blue_button" href="javascript:;" onclick="launchSound('.intro_music'); cinematic(); route('section', 'fadeOut'); setTimeout(route, 500, '.cinematique', 'fadeIn');">Blue</a>
-            </div>
-            <div class="item animation-text">
-                <a id="green_button" href="javascript:;" onclick="launchSound('.intro_music'); cinematic(); route('section', 'fadeOut'); setTimeout(route, 500, '.cinematique', 'fadeIn');">Green</a>
-            </div>
-            <div class="item animation-text">
-                <a id="red_button" href="javascript:;" onclick="launchSound('.intro_music'); cinematic(); route('section', 'fadeOut'); setTimeout(route, 500, '.cinematique', 'fadeIn');">Red</a>
-            </div>
-        </div>
-        <span class="message-bottom">What Color Is Your Soul?</span>
-    </section>
-
-    <section class="cinematique">
-        <div class="content">
-            <h1 class="cinematic_1">An adaptation of the novel Lost Horizon by James Hilton.</h1>
-            <h1 class="cinematic_2">Some facts have been altered for the sake of the narrative.</h1>
-            <h1 class="cinematic_3">Year 1933, somewhere in Tibet...</h1>
-
-            <h1 class="cinematic_4">Use your keyboard to move around.</h1>
-            <h1 class="cinematic_5">Use your mouse to make choice during the experiment.</h1>
-            <h1 class="cinematic_6">CHAPTER 1 - THE CRASH</h1>
-        </div>
-
-        <span class="message-bottom">Click and hold to skip the introduction</span>
-    </section>
-
-    <section class="scenes">
+    <section class="scenes" style="display: block!important;">
         <div class="loadScreen">
             <h1 class="load">0%</h1>
             <div class="progressBar">
@@ -67,7 +37,7 @@
             </div>
           </div>
 
-        <button class="map_button"></button>
+        <button class="map_button animate__animated"></button>
 
         <canvas id="_canvas"></canvas>
 
@@ -89,9 +59,9 @@
           <button></button>
         </div>
 
-        <div class="container-ui ch1_5">
+        <div class="container-ui animate__animated ch1_5">
           <span class="text_bottom">I will be able to find my way in the mountains…</span>
-          <button></button>
+          <button onclick="displayMap()"></button>
         </div>
 
         <div class="container-ui ch1_6">

@@ -121,8 +121,12 @@ function launchExperience(){
   $( ".navigation-bottom" ).fadeOut();
   $( ".image-background" ).addClass('animation_enter');
   setTimeout(function(){ window.location.replace('chapter1.html'); }, 2000 );
-
 }
+
+function displayMap() {
+  document.querySelector(".map_button").classList.add("animate__fadeInDown");
+}
+
 
 let cursor = document.createElement("div");
 cursor.classList.add("cursor");

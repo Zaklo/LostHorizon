@@ -85,15 +85,34 @@ export default class CharacterCh1 {
             document.querySelector('.ch1_2').style.display = "none"
         }
 
+        if (p1.x > 3.8140 && p1.x < 3.85) {
+            document.querySelector('.ch1_3').style.display = "block"
+        } else {
+            document.querySelector('.ch1_3').style.display = "none"
+        }
+
+        if (p1.x > 6.1578498821375 && p1.x < 6.20) {
+            document.querySelector('.ch1_4').style.display = "block"
+        } else {
+            document.querySelector('.ch1_4').style.display = "none"
+        }
+
+        if (p1.x > 17.470078476750732 && p1.x < 19.000) {
+            document.querySelector('.ch1_5').style.display = "block"
+        } else {
+            document.querySelector('.ch1_5').style.display = "none"
+        }
+
+        if (p1.x > 21.23 && p1.x < 25.084) {
+            document.querySelector('.ch1_6').style.display = "block"
+        } else {
+            document.querySelector('.ch1_6').style.display = "none"
+        }
 
         if (p1.x > 27.340186) {
             document.querySelector('.scenes').classList.add("fadeOutScene");
             setTimeout(function(){ window.location.replace('chapter2.html'); }, 2000 );
         }
-
-
-
-        
 
         document.addEventListener('keydown', (event) => {
             const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
