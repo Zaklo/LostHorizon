@@ -2,7 +2,15 @@
 
 .scenes{
     position: fixed; display: none; width: 100vw; height: 100vh; top: 0; left: 0; z-index: 9000;
-    canvas{  }
+
+    @keyframes fadeOutScene{
+        from { opacity: 1; }
+        to { opacity: 0; }
+    }
+
+    &.fadeOutScene{
+        animation-name: fadeOutScene; animation-duration: 1.5s; animation-fill-mode: forwards;
+    }
 }
 
 

@@ -86,6 +86,12 @@ export default class CharacterCh1 {
         }
 
 
+        if (p1.x > 27.340186) {
+            document.querySelector('.scenes').classList.add("fadeOutScene");
+            setTimeout(function(){ window.location.replace('chapter2.html'); }, 2000 );
+        }
+
+
 
         
 
