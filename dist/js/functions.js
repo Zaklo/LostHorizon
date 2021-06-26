@@ -120,7 +120,7 @@ function launchExperience(){
   $( ".home .content" ).fadeOut();
   $( ".navigation-bottom" ).fadeOut();
   $( ".image-background" ).addClass('animation_enter');
-  setTimeout(function(){ window.location.replace('experience.html'); }, 2000 );
+  setTimeout(function(){ window.location.replace('chapter1.html'); }, 2000 );
 
 }
 
@@ -133,6 +133,14 @@ document.addEventListener("mousemove", e => {
 
 function noHome(){
   document.querySelector("body").classList.remove("no-home");
+}
+
+function launchChap2(){
+  launchSound(".music_chap_2");
+  route('section', 'fadeOut');
+  setTimeout(function(){ route('.cinematique', 'fadeIn'); }, 2000 );
+  setTimeout(function(){ route('.cinematique', 'fadeOut'); }, 9500 );
+  setTimeout(function(){ route('.scenes', 'fadeIn'); }, 10000 );
 }
 
 if (window.location.href.indexOf("") > -1) {

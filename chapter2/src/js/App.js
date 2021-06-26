@@ -22,7 +22,7 @@ export default class App {
         this.setConfig()
         this.setRenderer()
         this.setCamera()
-        this.setChapter1()
+        this.setChapter2()
     }
 
     setRenderer() {
