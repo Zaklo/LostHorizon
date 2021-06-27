@@ -14,8 +14,6 @@ export default class CharacterCh1 {
         this.clock = new Clock()
         this.percentage = 0;
 
-
-//========== Create a path from the points
         this.curvePath = splineChap1();
 
         // Set up
@@ -70,7 +68,6 @@ export default class CharacterCh1 {
     MoveCamera() {
         this.percentage += this.addPercentage * this.wheel.getDelta();
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
-        //let p2 = this.curvePath.getPointAt((this.percentage + 0.01) % 1);
 
         gsap.timeline().to(this.perso.position, {x: p1.x, y: p1.y - 0.1, z: p1.z})
 
@@ -116,7 +113,6 @@ export default class CharacterCh1 {
         }
 
         document.addEventListener('keydown', (event) => {
-            const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
             switch (event.key) {
                 case "ArrowLeft":
                     this.perso.rotation.y = Math.PI / 2
