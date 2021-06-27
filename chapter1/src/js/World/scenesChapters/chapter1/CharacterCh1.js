@@ -9,7 +9,7 @@ export default class CharacterCh1 {
         this.time = options.time
         this.assets = options.assets
         this.position = options.position
-
+        this.addPercentage = 0.0095
         this.wheel = new MooveCamera()
         this.clock = new Clock()
         this.percentage = 0;
@@ -29,6 +29,13 @@ export default class CharacterCh1 {
             this.animate()
             this.MoveCamera()
         })
+    }
+
+    stopMove() {
+        this.addPercentage = 0
+        setTimeout(() => {
+            this.addPercentage = 0.0095
+        }, 2000)
     }
 
     createCharacter() {
@@ -61,17 +68,11 @@ export default class CharacterCh1 {
     }
 
     MoveCamera() {
-        this.percentage += 0.0095 * this.wheel.getDelta();
+        this.percentage += this.addPercentage * this.wheel.getDelta();
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
         //let p2 = this.curvePath.getPointAt((this.percentage + 0.01) % 1);
 
         gsap.timeline().to(this.perso.position, {x: p1.x, y: p1.y - 0.1, z: p1.z})
-
-        console.log(p1)
-
-        if (p1.x === 23.501121677200647 && p1.z === 5.741706626191953) {
-            gsap.timeline().to(this.perso.rotation, {y: Math.PI / 2})
-        }
 
         if (p1.x > -7.90 && p1.x < -5) {
             document.querySelector('.ch1_1').style.display = "block"

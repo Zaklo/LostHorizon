@@ -11,7 +11,7 @@ export default class Camera {
         this.sizes = options.sizes
         this.renderer = options.renderer
         this.debug = options.debug
-
+        this.addPercentage = 0.0095
         this.wheel = new MooveCamera()
         this.percentage = 0;
 
@@ -25,6 +25,13 @@ export default class Camera {
         this.setCamera()
         this.setPosition()
         //this.setOrbitControls()
+    }
+
+    stopMove() {
+        this.addPercentage = 0
+        setTimeout(() => {
+            this.addPercentage = 0.0095
+        }, 2000)
     }
 
     setCamera() {
@@ -78,7 +85,7 @@ export default class Camera {
     }
 
     MoveCamera() {
-        this.percentage += 0.0095 * this.wheel.getDelta();
+        this.percentage += this.addPercentage * this.wheel.getDelta();
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
         let p2 = this.curvePath.getPointAt((this.percentage + 0.01) % 1);
 
