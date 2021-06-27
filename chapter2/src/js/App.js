@@ -7,7 +7,6 @@ import Assets from '@tools/Loader'
 
 import Camera from './Camera'
 import Chapter2 from "./World/scenesChapters/chapter2";
-import Chapter1 from "./World/scenesChapters/chapter1";
 
 export default class App {
     constructor(options) {
@@ -85,17 +84,6 @@ export default class App {
         })
         // Add camera to scene
         this.scene.add(this.camera.container)
-    }
-
-    setChapter1() {
-        // Create chapter 1 instance
-        this.chapter1 = new Chapter1({
-            time: this.time,
-            debug: this.debug,
-            assets: this.assets,
-        })
-        // Add chapter to scene
-        this.scene.add(this.chapter1.container)
     }
 
     setChapter2() {

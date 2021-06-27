@@ -19,8 +19,8 @@ export default class Snow {
         for (let i = 0; i < positionAttribute.count; i++) {
             vertex.fromBufferAttribute(positionAttribute, i);
             vertex.y -= 0.02 * Math.random();
-            if (vertex.y < -40) {
-                vertex.y = 20;
+            if (vertex.y < -60) {
+                vertex.y = 30;
             }
             positionAttribute.setXYZ(i, vertex.x, vertex.y, vertex.z);
         }

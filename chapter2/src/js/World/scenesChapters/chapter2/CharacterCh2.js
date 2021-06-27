@@ -9,7 +9,7 @@ export default class CharacterCh2 {
         this.time = options.time
         this.assets = options.assets
         this.position = options.position
-
+        this.addPercentage = 0.0080
         this.wheel = new MooveCamera()
         this.clock = new Clock()
         this.percentage = 0;
@@ -26,9 +26,18 @@ export default class CharacterCh2 {
         this.setPosition()
 
         this.wheel.on('keydown', () => {
-            this.animate()
-            this.MoveCamera()
+            if(this.addPercentage > 0){
+                this.animate()
+                this.MoveCamera()
+            }
         })
+    }
+
+    stopMove() {
+        this.addPercentage = 0
+        setTimeout(() => {
+            this.addPercentage = 0.008
+        }, 2000)
     }
 
     createCharacter() {
@@ -50,9 +59,9 @@ export default class CharacterCh2 {
         this.perso.scale.z = 0.14
         this.perso.rotation.y = Math.PI / -2
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
-        this.perso.position.x = p1.x
-        this.perso.position.y = p1.y
-        this.perso.position.z = p1.z
+        this.perso.position.x = p1.x - 13.3
+        this.perso.position.y = p1.y + .1
+        this.perso.position.z = p1.z - 4.7
     }
 
     animate() {
@@ -61,13 +70,13 @@ export default class CharacterCh2 {
     }
 
     MoveCamera() {
-        this.percentage += 0.0095 * this.wheel.getDelta();
+        this.percentage += this.addPercentage * this.wheel.getDelta();
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
-        //let p2 = this.curvePath.getPointAt((this.percentage + 0.01) % 1);
 
-        gsap.timeline().to(this.perso.position, {x: p1.x - 13.3, y: p1.y - 0.1, z: p1.z - 4})
+        gsap.timeline().to(this.perso.position, {x: p1.x - 13.3, y: p1.y + 0.1, z: p1.z - 4.7})
 
-        if (p1.x === 23.501121677200647 && p1.z === 5.741706626191953) {
+        if (p1.x === 23.514076781571916 && p1.z === 5.8038313931210315) {
+            this.stopMove()
             gsap.timeline().to(this.perso.rotation, {y: Math.PI / 2})
         }
 
@@ -112,18 +121,5 @@ export default class CharacterCh2 {
         if (p1.x === 36.96768983024135 && p1.z === 2.879518983922841) {
             gsap.timeline().to(this.perso.rotation, {y: Math.PI / -2})
         }
-
-
-        document.addEventListener('keydown', (event) => {
-            const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
-            switch (event.key) {
-                case "ArrowLeft":
-                    this.perso.rotation.y = Math.PI / 2
-                    break;
-                case "ArrowRight":
-                    this.perso.rotation.y = Math.PI / -2
-                    break;
-            }
-        });
     }
 }
