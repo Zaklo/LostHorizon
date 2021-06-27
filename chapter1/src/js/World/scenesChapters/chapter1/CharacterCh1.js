@@ -1,4 +1,4 @@
-import {Object3D, AnimationMixer, Clock} from 'three'
+import {Object3D, AnimationMixer, Clock, PointLight, SpotLight} from 'three'
 import MooveCamera from "../../../Tools/MooveCamera";
 import gsap from "gsap";
 import splineChap1 from "../chapter1/splineChap1";
@@ -8,7 +8,7 @@ export default class CharacterCh1 {
         // Options
         this.time = options.time
         this.assets = options.assets
-        this.position = options.position
+
         this.addPercentage = 0.0095
         this.wheel = new MooveCamera()
         this.clock = new Clock()
@@ -21,7 +21,9 @@ export default class CharacterCh1 {
         this.container.name = 'perso'
 
         this.createCharacter()
+        this.setObjects()
         this.setPosition()
+        this.torchLight()
 
         this.wheel.on('keydown', () => {
             this.animate()
@@ -49,15 +51,55 @@ export default class CharacterCh1 {
         this.container.add(this.perso)
     }
 
+    setObjects() {
+        this.torche = this.assets.models.chap1.torche.scene
+        this.carte = this.assets.models.chap1.carte.scene
+        this.jumelles = this.assets.models.chap1.jumelles.scene
+
+        this.container.add(this.torche, this.carte, this.jumelles);
+    }
+
     setPosition() {
         this.perso.scale.x = 0.14
         this.perso.scale.y = 0.14
         this.perso.scale.z = 0.14
         this.perso.rotation.y = Math.PI / -2
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
+
         this.perso.position.x = p1.x
         this.perso.position.y = p1.y
         this.perso.position.z = p1.z
+
+        this.torche.position.x = 6.157849
+        this.torche.position.y = p1.y - .2
+        this.torche.position.z = p1.z + .8
+
+        this.jumelles.position.x = 3.8140
+        this.jumelles.position.y = p1.y - .096
+        this.jumelles.position.z = p1.z + 1.3
+
+        this.carte.position.x = 17.470078
+        this.carte.position.y = p1.y - .86
+        this.carte.position.z = p1.z
+
+        this.carte.rotation.z = 60
+    }
+
+    torchLight() {
+        this.light = new SpotLight('#DD571C', 4, 4)
+        let p1 = this.curvePath.getPointAt(this.percentage % 1);
+        this.light.position.set(6.157849, p1.y - .12, p1.z + .88)
+        this.light.target.position.set(6.157847, p1.y - 2, p1.z + 2 )
+        this.light.angle = Math.PI / 4
+        this.light.decay = 1
+        this.container.add(this.light.target)
+        this.container.add(this.light)
+
+        this.light1 = new SpotLight('#DD571C', 3, 1)
+        this.light1.position.set(p1.x, p1.y + .5, p1.z)
+        this.light1.target.position.set(p1.x + 1.5, p1.y, p1.z)
+        this.container.add(this.light1.target)
+        this.container.add(this.light1)
     }
 
     animate() {
@@ -70,6 +112,8 @@ export default class CharacterCh1 {
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
 
         gsap.timeline().to(this.perso.position, {x: p1.x, y: p1.y - 0.1, z: p1.z})
+        gsap.timeline().to(this.light1.position, {x: p1.x, y: p1.y + .5, z: p1.z})
+        gsap.timeline().to(this.light1.target, {x: p1.x, y: p1.y + 1.5, z: p1.z})
 
         if (p1.x > -7.90 && p1.x < -5) {
             document.querySelector('.ch1_1').style.display = "block"
@@ -109,7 +153,9 @@ export default class CharacterCh1 {
 
         if (p1.x > 27.340186) {
             document.querySelector('.scenes').classList.add("fadeOutScene");
-            setTimeout(function(){ window.location.replace('chapter2.html'); }, 2000 );
+            setTimeout(function () {
+                window.location.replace('chapter2.html');
+            }, 2000);
         }
 
         document.addEventListener('keydown', (event) => {
