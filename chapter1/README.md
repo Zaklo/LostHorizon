@@ -1,7 +1,9 @@
-# THREE.js TEMPLATE
+# Chapitre 1
 
 ## Requirements & Setup
 You need to have **node.js** installed. 
+
+Install with `npm install`
 
 Start with `npm run init`
 
