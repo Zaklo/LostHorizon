@@ -79,8 +79,8 @@ export default class CharacterCh1 {
         this.jumelles.position.z = p1.z + 1.3
 
         this.carte.position.x = 17.470078
-        this.carte.position.y = p1.y - .86
-        this.carte.position.z = p1.z
+        this.carte.position.y = p1.y - .91
+        this.carte.position.z = p1.z + .5
 
         this.carte.rotation.z = 60
     }
@@ -94,7 +94,10 @@ export default class CharacterCh1 {
         this.light.decay = 1
         this.container.add(this.light.target)
         this.container.add(this.light)
+    }
 
+    removeObject(object){
+        object.position.y += 10
     }
 
     animate() {
@@ -107,6 +110,18 @@ export default class CharacterCh1 {
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
 
         gsap.timeline().to(this.perso.position, {x: p1.x, y: p1.y - 0.1, z: p1.z})
+
+        if(this.perso.position.x > 3.8){
+            this.container.remove(this.jumelles)
+        }
+
+        if(this.perso.position.x > 6.2){
+            this.container.remove(this.torche, this.light)
+        }
+
+        if(this.perso.position.x > 17.470078){
+            this.container.remove(this.carte)
+        }
 
         if (p1.x > -7.90 && p1.x < -5) {
             document.querySelector('.ch1_1').style.display = "block"
