@@ -123,26 +123,31 @@ export default class CharacterCh1 {
             this.container.remove(this.carte)
         }
 
+        console.log(p1)
+
         if (p1.x > -7.90 && p1.x < -5) {
             document.querySelector('.ch1_1').style.display = "block"
         } else {
             document.querySelector('.ch1_1').style.display = "none"
         }
 
-        if (p1.x > 0.210222 && p1.x < 0.22) {
+        if (p1.x === 0.2102226558357801) {
             document.querySelector('.ch1_2').style.display = "block"
+            this.stopMove()
         } else {
             document.querySelector('.ch1_2').style.display = "none"
         }
 
-        if (p1.x > 3.8140 && p1.x < 3.85) {
+        if (p1.x === 3.2959869261502677) {
             document.querySelector('.ch1_3').style.display = "block"
+            this.stopMove()
         } else {
             document.querySelector('.ch1_3').style.display = "none"
         }
 
-        if (p1.x > 6.1578498821375 && p1.x < 6.20) {
+        if (p1.x === 5.49493757400784) {
             document.querySelector('.ch1_4').style.display = "block"
+            this.stopMove()
         } else {
             document.querySelector('.ch1_4').style.display = "none"
         }

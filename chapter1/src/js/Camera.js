@@ -24,7 +24,7 @@ export default class Camera {
 
         this.setCamera()
         this.setPosition()
-        this.setOrbitControls()
+        //this.setOrbitControls()
     }
 
     stopMove() {
@@ -88,6 +88,20 @@ export default class Camera {
         this.percentage += this.addPercentage * this.wheel.getDelta();
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
         let p2 = this.curvePath.getPointAt((this.percentage + 0.01) % 1);
+
+        if (p1.x === 0.2102226558357801) {
+            this.stopMove();
+        }
+
+        if (p1.x === 3.2959869261502677) {
+            this.stopMove();
+        }
+
+        if (p1.x === 5.49493757400784) {
+            this.stopMove();
+        }
+
+        
 
         gsap.timeline().to(this.camera.position, {x: p1.x, y: p1.y + 1, z: p1.z + 4.4})
 

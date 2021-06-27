@@ -25,20 +25,36 @@ document.onmouseout = event => {
   document.getElementById("title").style.setProperty('transform', "perspective(100px) rotateX(0deg) rotateY(0deg) scale(1)");
 }
 
+function muteAudio() {
+  var audios = document.querySelectorAll("audio");
 
-
-
+  audios.forEach(function(audio) {
+    if(audio.muted == true){
+      audio.muted = false;
+      document.querySelector('.sound-button').style.opacity = "1";
+    }
+    else{
+      audio.muted = true;
+      document.querySelector('.sound-button').style.opacity = "0.7";
+    }
+  });  
+}
 
 document.querySelector(".map_button").onclick = event => {
   document.querySelector(".map").classList.add("animate__fadeInUp");
 }
 
-
+function skipChap1() {
+  $(".cinematique").fadeOut();
+  setTimeout(function(){ $(".scenes").fadeIn(); }, 500);
+  launchSound('#music_chap_1');
+  document.querySelector(".intro_music").pause();
+  document.querySelector(".intro_music").currentTime = 0;
+}
 
 function launchSound(element){
   document.querySelector(element).play();
 }
-
 
 function cinematic(){
   setTimeout(function(){ 
@@ -86,20 +102,6 @@ function cinematic(){
   }, 2000);
 }
 
-
-
-function muteAudio() {
-  let audio = document.getElementById('homemusic');
-
-  if (document.getElementById("homemusic").muted == false) {
-    document.getElementById("homemusic").muted = true;
-  }
-    
-    if (document.getElementById("homemusic").muted == true) {
-        document.getElementById("homemusic").muted = false;
-    }  
-  }
-
 function route(remove, action, classes){
   let selectClass = '' + remove;
   
@@ -137,6 +139,11 @@ document.addEventListener("mousemove", e => {
 
 function noHome(){
   document.querySelector("body").classList.remove("no-home");
+}
+
+function displayBinoculars(){
+  launchSound("#video_binoculars");
+  document.querySelector(".binoculars-container").classList.add("animate__fadeInDown");
 }
 
 function launchChap2(){

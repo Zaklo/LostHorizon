@@ -89,6 +89,15 @@ export default class Camera {
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
 
         gsap.timeline().to(this.camera.position, {x: p1.x - 13.3, y: p1.y + 1, z: p1.z - .9})
+        if (p1.x === 23.47177580293144 && p1.z === 5.840683542784142) {
+            this.stopMove()
+        }
+
+        if (p1.x === 47.89090735236253 && p1.z === 1.6660744384882213) {
+            this.stopMove()
+        }
+
+        gsap.timeline().to(this.camera.position, {x: p1.x - 13.3, y: p1.y + 1, z: p1.z - 1})
 
         this.camera.updateProjectionMatrix();
     }
