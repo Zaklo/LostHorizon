@@ -126,10 +126,11 @@ export default class CharacterCh2 {
             document.querySelector('.obscurity').style.display = "block"
         }
 
-        if (p1.x > 42.582 && p1.x < 49.966 && p1.z > 5) {
-            document.querySelector('.ch2_8').style.display = "block"
+        if (p1.x === 44.77510493115564 && p1.z === 7.157337627410166) {
+            document.querySelector('.ch2_7').style.display = "block"
+            this.stopMove()
         } else {
-            document.querySelector('.ch2_8').style.display = "none"
+            document.querySelector('.ch2_7').style.display = "none"
         }
     }
 }

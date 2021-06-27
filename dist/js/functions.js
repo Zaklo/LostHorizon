@@ -40,6 +40,11 @@ function muteAudio() {
   });  
 }
 
+function flashlight() {
+  document.querySelector(".ch2_7").style.display = "none";
+  document.querySelector(".obscurity").style.display = "none";
+}
+
 document.querySelector(".map_button").onclick = event => {
   document.querySelector(".map").classList.add("animate__fadeInUp");
 }
