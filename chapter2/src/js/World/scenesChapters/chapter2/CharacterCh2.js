@@ -115,6 +115,13 @@ export default class CharacterCh2 {
             document.querySelector('.ch2_4').style.display = "none"
         }
 
+        if (p1.x === 47.89090735236253 && p1.z === 1.6660744384882213) {
+            document.querySelector('.ch2_5').style.display = "block"
+            this.stopMove()
+        } else {
+            document.querySelector('.ch2_5').style.display = "none"
+        }
+
         if (p1.x > 42.582 && p1.x < 49.966 && p1.z > 5) {
             document.querySelector('.ch2_8').style.display = "block"
         } else {

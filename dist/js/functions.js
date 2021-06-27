@@ -26,19 +26,21 @@ document.onmouseout = event => {
 }
 
 
-
-
-
 document.querySelector(".map_button").onclick = event => {
   document.querySelector(".map").classList.add("animate__fadeInUp");
 }
 
-
+function skipChap1() {
+  $(".cinematique").fadeOut();
+  setTimeout(function(){ $(".scenes").fadeIn(); }, 500);
+  launchSound('#music_chap_1');
+  document.querySelector(".intro_music").pause();
+  document.querySelector(".intro_music").currentTime = 0;
+}
 
 function launchSound(element){
   document.querySelector(element).play();
 }
-
 
 function cinematic(){
   setTimeout(function(){ 
@@ -137,6 +139,11 @@ document.addEventListener("mousemove", e => {
 
 function noHome(){
   document.querySelector("body").classList.remove("no-home");
+}
+
+function displayBinoculars(){
+  launchSound("#video_binoculars");
+  document.querySelector(".binoculars-container").classList.add("animate__fadeInDown");
 }
 
 function launchChap2(){
