@@ -79,8 +79,8 @@ export default class CharacterCh1 {
         this.jumelles.position.z = p1.z + 1.3
 
         this.carte.position.x = 17.470078
-        this.carte.position.y = p1.y - .86
-        this.carte.position.z = p1.z
+        this.carte.position.y = p1.y - .91
+        this.carte.position.z = p1.z + .5
 
         this.carte.rotation.z = 60
     }
@@ -89,17 +89,15 @@ export default class CharacterCh1 {
         this.light = new SpotLight('#DD571C', 4, 4)
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
         this.light.position.set(6.157849, p1.y - .12, p1.z + .88)
-        this.light.target.position.set(6.157847, p1.y - 2, p1.z + 2 )
+        this.light.target.position.set(6.157847, p1.y - 2, p1.z + 2)
         this.light.angle = Math.PI / 4
         this.light.decay = 1
         this.container.add(this.light.target)
         this.container.add(this.light)
+    }
 
-        this.light1 = new SpotLight('#DD571C', 3, 1)
-        this.light1.position.set(p1.x, p1.y + .5, p1.z)
-        this.light1.target.position.set(p1.x + 1.5, p1.y, p1.z)
-        this.container.add(this.light1.target)
-        this.container.add(this.light1)
+    removeObject(object){
+        object.position.y += 10
     }
 
     animate() {
@@ -112,8 +110,18 @@ export default class CharacterCh1 {
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
 
         gsap.timeline().to(this.perso.position, {x: p1.x, y: p1.y - 0.1, z: p1.z})
-        gsap.timeline().to(this.light1.position, {x: p1.x, y: p1.y + .5, z: p1.z})
-        gsap.timeline().to(this.light1.target, {x: p1.x, y: p1.y + 1.5, z: p1.z})
+
+        if(this.perso.position.x > 3.8){
+            this.container.remove(this.jumelles)
+        }
+
+        if(this.perso.position.x > 6.2){
+            this.container.remove(this.torche, this.light)
+        }
+
+        if(this.perso.position.x > 17.470078){
+            this.container.remove(this.carte)
+        }
 
         console.log(p1)
 
