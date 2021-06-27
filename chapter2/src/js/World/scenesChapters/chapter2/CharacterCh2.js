@@ -26,10 +26,8 @@ export default class CharacterCh2 {
         this.setPosition()
 
         this.wheel.on('keydown', () => {
-            if(this.addPercentage > 0){
-                this.animate()
-                this.MoveCamera()
-            }
+            this.animate()
+            this.MoveCamera()
         })
     }
 
@@ -74,10 +72,22 @@ export default class CharacterCh2 {
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
 
         gsap.timeline().to(this.perso.position, {x: p1.x - 13.3, y: p1.y + 0.1, z: p1.z - 4.7})
+        console.log(p1)
 
         if (p1.x === 23.514076781571916 && p1.z === 5.8038313931210315) {
-            this.stopMove()
             gsap.timeline().to(this.perso.rotation, {y: Math.PI / 2})
+        }
+
+        if (p1.x === 21.134839615841287 && p1.z === 4.585947225286623) {
+            gsap.timeline().to(this.perso.rotation, {y: Math.PI / -2})
+        }
+
+        if (p1.x === 47.93730080022289 && p1.z === 1.6471052926782082) {
+            gsap.timeline().to(this.perso.rotation, {y: Math.PI / 2})
+        }
+
+        if (p1.x === 36.970275419534666 && p1.z === 2.8894234896152318) {
+            gsap.timeline().to(this.perso.rotation, {y: Math.PI / -2})
         }
 
         if (p1.x > 3.018 && p1.x < 14.058) {
@@ -108,18 +118,6 @@ export default class CharacterCh2 {
             document.querySelector('.ch2_8').style.display = "block"
         } else {
             document.querySelector('.ch2_8').style.display = "none"
-        }
-
-        if (p1.x === 21.088409331423215 && p1.z === 4.602447984017861) {
-            gsap.timeline().to(this.perso.rotation, {y: Math.PI / -2})
-        }
-
-        if (p1.x === 47.86300163149727 && p1.z === 1.5783586098214515) {
-            gsap.timeline().to(this.perso.rotation, {y: Math.PI / 2})
-        }
-
-        if (p1.x === 36.96768983024135 && p1.z === 2.879518983922841) {
-            gsap.timeline().to(this.perso.rotation, {y: Math.PI / -2})
         }
     }
 }
