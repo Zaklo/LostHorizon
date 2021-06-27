@@ -86,7 +86,7 @@ export default class CharacterCh1 {
     }
 
     torchLight() {
-        this.light = new SpotLight('#DD571C', 4, 4)
+        this.light = new SpotLight('#e7953c', 4, 4)
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
         this.light.position.set(6.157849, p1.y - .12, p1.z + .88)
         this.light.target.position.set(6.157847, p1.y - 2, p1.z + 2)

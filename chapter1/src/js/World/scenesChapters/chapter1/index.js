@@ -31,7 +31,7 @@ export default class Chapter1 {
 
     init() {
         this.setAmbientLight()
-        this.setPointLight()
+        //this.setPointLight()
         this.setPlans()
     }
 
