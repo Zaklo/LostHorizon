@@ -1,4 +1,4 @@
-import {Object3D, MeshDistanceMaterial, TextureLoader, RGBADepthPacking} from 'three'
+import {Object3D} from 'three'
 
 export default class Plan2 {
     constructor(options) {

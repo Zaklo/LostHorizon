@@ -2,7 +2,6 @@ import { Object3D, PerspectiveCamera } from 'three'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import MooveCamera from "./Tools/MooveCamera";
 import gsap from 'gsap';
-import splineChap2 from "./World/scenesChapters/chapter2/splineChap2";
 import splineChap1 from "./World/scenesChapters/chapter1/splineChap1";
 
 let points = splineChap1
@@ -56,7 +55,7 @@ export default class Camera {
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
         this.camera.position.x = p1.x
         this.camera.position.y = p1.y + 1
-        this.camera.position.z = p1.z + 5.4
+        this.camera.position.z = p1.z + 4.4
     }
 
     setOrbitControls() {
@@ -83,7 +82,7 @@ export default class Camera {
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
         let p2 = this.curvePath.getPointAt((this.percentage + 0.01) % 1);
 
-        gsap.timeline().to(this.camera.position, {x: p1.x, y: p1.y + 1})
+        gsap.timeline().to(this.camera.position, {x: p1.x, y: p1.y + 1, z: p1.z + 4.4})
 
         this.camera.updateProjectionMatrix();
     }

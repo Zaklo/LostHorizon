@@ -7,6 +7,7 @@ import Plan2 from './../../../World/scenesChapters/chapter1/Plan2'
 import BG from './../../../World/scenesChapters/chapter1/BG'
 import CharacterCh1 from './CharacterCh1'
 import Sol from "../../scenesChapters/chapter1/Sol";
+import Snow from "./Snow";
 
 export default class Chapter1 {
     constructor(options) {
@@ -97,12 +98,17 @@ export default class Chapter1 {
             time: this.time,
             assets: this.assets,
         })
+        this.snow = new Snow({
+            time: this.time,
+            assets: this.assets,
+        })
         this.container.add(
             this.sol.container,
             this.plan1.container,
             this.plan2.container,
             this.bg.container,
             this.character.container,
+            this.snow.container,
         )
     }
 }

@@ -26,7 +26,6 @@ export default class Plan1 {
   }
 
   setPosition() {
-    // Set camera position
     this.plan1.rotation.y = Math.PI / -2
     this.plan1.position.y = -0.5
     this.plan1.position.z = -50
