@@ -96,8 +96,9 @@ export default class CharacterCh2 {
             document.querySelector('.ch2_1').style.display = "none"
         }
 
-        if (p1.x > 20 && p1.x < 23.512) {
+        if (p1.x === 23.47177580293144 && p1.z === 5.840683542784142) {
             document.querySelector('.ch2_2').style.display = "block"
+            this.stopMove()
         } else {
             document.querySelector('.ch2_2').style.display = "none"
         }

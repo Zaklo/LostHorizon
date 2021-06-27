@@ -19,7 +19,7 @@
   &.ch1_3{ 
     background: rgba($color: #000000, $alpha: 0.2)!important;
     
-    button{ display: block; position: absolute; top: 70%; left: 55%; width: 40px; height: 40px; border: none; padding: 1px; border: 1px solid white; border-radius: 100%; background: transparent; outline: none; transition: all 0.2s;
+    button{ display: block; position: absolute; top: 67.5%; left: 54.5%;width: 40px; height: 40px; border: none; padding: 1px; border: 1px solid white; border-radius: 100%; background: transparent; outline: none; transition: all 0.2s;
 
       &:hover{ &::after{ opacity: 1; } transform: scale(1.2); border: 3px solid white; padding: 0!important; }
     
@@ -30,7 +30,7 @@
   &.ch1_4{ 
     background: rgba($color: #000000, $alpha: 0.2)!important;
     
-    button{ display: block; position: absolute; top: 70%; left: 55%; width: 40px; height: 40px; border: none; padding: 1px; border: 1px solid white; border-radius: 100%; background: transparent; outline: none; transition: all 0.2s;
+    button{ display: block; position: absolute; top: 66%; left: 56%; width: 40px; height: 40px; border: none; padding: 1px; border: 1px solid white; border-radius: 100%; background: transparent; outline: none; transition: all 0.2s;
 
       &:hover{ &::after{ opacity: 1; } transform: scale(1.2); border: 3px solid white; padding: 0!important; }
     
@@ -50,11 +50,11 @@
   }
 
   &.ch2_2{ 
-    button{ display: block; position: absolute; top: 50%; left: 10%; width: 40px; height: 40px; border: none; padding: 1px; border: 1px solid white; border-radius: 100%; background: transparent; outline: none; transition: all 0.2s;
+    button{ display: block; position: absolute; top: 53%; left: 40%; width: 40px; height: 40px; border: none; padding: 1px; border: 1px solid white; border-radius: 100%; background: transparent; outline: none; transition: all 0.2s;
 
       &:hover{ &::after{ opacity: 1; } border: 2px solid white; padding: 0!important; }
     
-      &::after{ content: 'textokokok'; opacity: 0; transition: all 0.5s; position: absolute; color: white; bottom: -30px; left: -20px;} 
+      &::after{ content: 'Go through the tree trunk'; opacity: 0; transition: all 0.5s; position: absolute; color: white; bottom: 7px; left: 40px; width: 150px;} 
     }
   }
 }

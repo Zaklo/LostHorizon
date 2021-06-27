@@ -88,6 +88,10 @@ export default class Camera {
         this.percentage += this.addPercentage * this.wheel.getDelta();
         let p1 = this.curvePath.getPointAt(this.percentage % 1);
 
+        if (p1.x > 3.018 && p1.x < 14.058) {
+            
+        } 
+
         gsap.timeline().to(this.camera.position, {x: p1.x - 13.3, y: p1.y + 1, z: p1.z - 1})
 
         this.camera.updateProjectionMatrix();
