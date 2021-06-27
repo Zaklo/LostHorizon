@@ -25,6 +25,20 @@ document.onmouseout = event => {
   document.getElementById("title").style.setProperty('transform', "perspective(100px) rotateX(0deg) rotateY(0deg) scale(1)");
 }
 
+function muteAudio() {
+  var audios = document.querySelectorAll("audio");
+
+  audios.forEach(function(audio) {
+    if(audio.muted == true){
+      audio.muted = false;
+      document.querySelector('.sound-button').style.opacity = "1";
+    }
+    else{
+      audio.muted = true;
+      document.querySelector('.sound-button').style.opacity = "0.7";
+    }
+  });  
+}
 
 document.querySelector(".map_button").onclick = event => {
   document.querySelector(".map").classList.add("animate__fadeInUp");
@@ -87,20 +101,6 @@ function cinematic(){
     }, 8000);
   }, 2000);
 }
-
-
-
-function muteAudio() {
-  let audio = document.getElementById('homemusic');
-
-  if (document.getElementById("homemusic").muted == false) {
-    document.getElementById("homemusic").muted = true;
-  }
-    
-    if (document.getElementById("homemusic").muted == true) {
-        document.getElementById("homemusic").muted = false;
-    }  
-  }
 
 function route(remove, action, classes){
   let selectClass = '' + remove;

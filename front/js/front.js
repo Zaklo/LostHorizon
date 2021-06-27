@@ -16,6 +16,10 @@ $(document).ready(function () {
     document.querySelector(".binoculars-container").classList.add("animate__fadeOutDown");
   }
 
+
+
+ 
+
   if ($(this).scrollTop() > 0 ) {
     $('.navigation-top').addClass('page-scrolled');
   } else {
