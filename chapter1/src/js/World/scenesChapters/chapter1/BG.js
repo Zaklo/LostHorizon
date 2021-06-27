@@ -33,7 +33,7 @@ export default class BG {
         this.bg.position.x = 7
         this.bg.rotation.y = Math.PI / -2
         this.bg.position.y = -0.5
-        this.bg.position.z = -52.4
+        this.bg.position.z = -56.4
     }
 
     MoveBg(){
