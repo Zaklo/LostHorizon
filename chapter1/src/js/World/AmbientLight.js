@@ -16,7 +16,7 @@ export default class AmbientLightSource {
     }
   }
   createAmbientLight() {
-    this.light = new AmbientLight( '#ffd4bc',0.2);
+    this.light = new AmbientLight( '#ffd4bc',0.4);
 
     this.container.add(this.light)
   }
