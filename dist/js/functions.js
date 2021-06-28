@@ -49,6 +49,10 @@ document.querySelector(".map_button").onclick = event => {
   document.querySelector(".map").classList.add("animate__fadeInUp");
 }
 
+function d_none_ui() {
+  $(".container-ui").fadeOut();
+}
+
 function skipChap1() {
   $(".cinematique").fadeOut();
   setTimeout(function(){ $(".scenes").fadeIn(); }, 500);
@@ -132,6 +136,7 @@ function launchExperience(){
 
 function displayMap() {
   document.querySelector(".map_button").classList.add("animate__fadeInDown");
+  document.querySelector(".ch1_5").style.display == "none";
 }
 
 

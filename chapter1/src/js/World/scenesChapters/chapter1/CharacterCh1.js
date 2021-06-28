@@ -131,8 +131,6 @@ export default class CharacterCh1 {
             document.querySelector('.ch1_1').style.display = "none"
         }
 
-        
-
         if (p1.x === 1.5125651273843728) {
             document.querySelector('.cold_perso').style.display = "block"
             document.getElementById('perso-cold-video').play()
@@ -161,8 +159,9 @@ export default class CharacterCh1 {
             document.querySelector('.ch1_4').style.display = "none"
         }
 
-        if (p1.x > 17.470078476750732 && p1.x < 19.000) {
+        if (p1.x === 16.819766962731737) {
             document.querySelector('.ch1_5').style.display = "block"
+            this.stopMove()
         } else {
             document.querySelector('.ch1_5').style.display = "none"
         }

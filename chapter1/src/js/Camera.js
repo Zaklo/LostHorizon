@@ -101,7 +101,9 @@ export default class Camera {
             this.stopMove();
         }
 
-        
+        if (p1.x === 16.819766962731737) {
+            this.stopMove()
+        } 
 
         gsap.timeline().to(this.camera.position, {x: p1.x, y: p1.y + 1, z: p1.z + 4.4})
 
