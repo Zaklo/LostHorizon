@@ -1,5 +1,5 @@
 .container-ui{
-  display: none; position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; background: rgba($color: #000000, $alpha: 0.8);
+  display: none; position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; background: rgba($color: #000000, $alpha: 0.3);
 
   .text{ position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: rem(30px); color: white; font-family: 'Larken', sans-serif; font-weight: 800; font-style: italic; text-align: center; }
 

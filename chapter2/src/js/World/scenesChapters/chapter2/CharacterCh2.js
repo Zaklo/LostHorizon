@@ -122,7 +122,7 @@ export default class CharacterCh2 {
             document.querySelector('.ch2_5').style.display = "none"
         }
 
-        if (p1.x > 39.707655982498395 && p1.z > 6.222902688715841) {
+        if (p1.x === 39.707655982498395 && p1.z === 6.222902688715841) {
             document.querySelector('.obscurity').style.display = "block"
         }
 
@@ -131,6 +131,12 @@ export default class CharacterCh2 {
             this.stopMove()
         } else {
             document.querySelector('.ch2_7').style.display = "none"
+        }
+
+        if (p1.x > 62.301922241900215 && p1.x < 65.61299605472819) {
+            document.querySelector('.ch2_8').style.display = "block"
+        } else {
+            document.querySelector('.ch2_8').style.display = "none"
         }
     }
 }

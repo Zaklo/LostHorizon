@@ -36,13 +36,16 @@
 
 .binoculars-container{
     &.animate__fadeInDown{ display: block!important; }
+
+    .text_bottom{ position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); font-size: rem(30px); color: white; font-family: 'Larken', sans-serif; font-weight: 800; font-style: italic; text-align: center; }
+
     display: none; z-index: 99999; position: fixed; top: 0; left: 0; background: black;
     height: 100vh; width: 100vw; 
     video{ height: 100%; width: 100%; }
 
     .close_button{
         position: absolute; 
-        bottom: 80px; left: 50%; transform: translateX(-50%); outline: none; 
+        bottom: 200px; left: 50%; transform: translateX(-50%); outline: none; 
         background: none; background-image: url("../img/close_button.svg");   background-size: contain;  background-position: center; background-repeat: no-repeat; z-index: 3; cursor: pointer;
         width: 30px; height: 30px; border: none; transition: all 0.5s;
       

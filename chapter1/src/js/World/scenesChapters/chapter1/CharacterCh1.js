@@ -125,7 +125,7 @@ export default class CharacterCh1 {
 
         console.log(p1)
 
-        if (p1.x > -7.90 && p1.x < -5) {
+        if (p1.x > -6.878119619486358 && p1.x < -5) {
             document.querySelector('.ch1_1').style.display = "block"
         } else {
             document.querySelector('.ch1_1').style.display = "none"
