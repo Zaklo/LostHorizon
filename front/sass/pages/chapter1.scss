@@ -59,6 +59,10 @@
     left: 0;
 }
 
+.cold_perso{
+    display: none; position: fixed; top: 0; left: 0; height: 100vh; width: 100vw;
+}
+
 .cinematique{
     position: relative; display: none; height: 100vh;
 

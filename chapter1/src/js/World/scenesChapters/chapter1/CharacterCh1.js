@@ -131,6 +131,15 @@ export default class CharacterCh1 {
             document.querySelector('.ch1_1').style.display = "none"
         }
 
+        
+
+        if (p1.x === 1.5125651273843728) {
+            document.querySelector('.cold_perso').style.display = "block"
+            document.getElementById('perso-cold-video').play()
+            setTimeout(function(){ document.querySelector('.cold_perso').style.display = "none!important" }, 1500);
+        } 
+
+
         if (p1.x === 0.2102226558357801) {
             document.querySelector('.ch1_2').style.display = "block"
             this.stopMove()
