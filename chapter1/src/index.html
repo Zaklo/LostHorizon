@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="css/main.min.css">   
+    <link rel="stylesheet" href="css/main.min.css">
     <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-icon-72x72.png">
@@ -50,7 +50,7 @@
       <button></button>
     </div>
 
-    
+
     <div class="container-ui ch2_1">
       <span class="text">ch2_1</span>
     </div>
@@ -61,7 +61,7 @@
     </div>
 
 
-    
+
 
     <div class="container-ui ch2_3">
       <span class="text">ch2_3</span>
@@ -69,7 +69,7 @@
 
     <div class="container-ui ch2_4">
       <span class="text">ch2_4</span>
-      
+
     </div>
 
     <div class="container-ui ch2_8">
@@ -86,6 +86,40 @@
 </body>
 
 <script src="js/main.js"></script>
-<script src="js/main.min.js"></script> 
-<script src="js/ring_pointer.js"></script> 
+<script src="js/main.min.js"></script>
+<script src="js/ring_pointer.js"></script>
+
+<script id="vertexShader" type="x-shader/x-vertex">
+    varying vec2 vUv;
+    void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix
+        * modelViewMatrix
+        * vec4( position, 1.0 );
+    }
+</script>
+
+<script id="fragmentShader" type="x-shader/x-fragment">
+    uniform float amount;
+    uniform sampler2D tDiffuse;
+    varying vec2 vUv;
+
+    float random( vec2 p )
+    {
+        vec2 K1 = vec2(
+        10.14069263277926, // e^pi (Gelfond's constant)
+        2.665144142690225 // 2^sqrt(2) (Gelfondâ€“Schneider constant)
+        );
+        return fract( cos( dot(p,K1) ) * 12345.6789 );
+    }
+
+    void main() {
+
+        vec4 color = texture2D( tDiffuse, vUv );
+        vec2 uvRandom = vUv;
+        uvRandom.y *= random(vec2(uvRandom.y,amount));
+        color.rgb += random(uvRandom)*0.11;
+        gl_FragColor = vec4( color  );
+    }
+</script>
 </html>

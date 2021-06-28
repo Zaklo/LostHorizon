@@ -1,4 +1,8 @@
-import {BasicShadowMap, FogExp2, Scene, sRGBEncoding, WebGLRenderer} from 'three'
+import {BasicShadowMap, Clock, FogExp2, Scene, sRGBEncoding, WebGLRenderer} from 'three'
+import {EffectComposer} from "three/examples/jsm/postprocessing/EffectComposer";
+import {RenderPass} from "three/examples/jsm/postprocessing/RenderPass";
+import {ShaderPass} from "three/examples/jsm/postprocessing/ShaderPass";
+
 import * as dat from 'dat.gui'
 
 import Sizes from '@tools/Sizes'
@@ -22,12 +26,33 @@ export default class App {
         this.setRenderer()
         this.setCamera()
         this.setChapter1()
+
+        this.composer = new EffectComposer(this.renderer);
+        this.renderPass = new RenderPass(this.scene, this.camera.camera);
+        this.composer.addPass(this.renderPass);
+
+        //custom shader pass
+        let vertShader = document.getElementById('vertexShader').textContent;
+        let fragShader = document.getElementById('fragmentShader').textContent;
+        this.counter = 0.0;
+        let myEffect = {
+            uniforms: {
+                "tDiffuse": {value: null},
+                "amount": {value: this.counter}
+            },
+            vertexShader: vertShader,
+            fragmentShader: fragShader
+        }
+
+        this.customPass = new ShaderPass(myEffect);
+        this.customPass.renderToScreen = true;
+        this.composer.addPass(this.customPass);
     }
 
     setRenderer() {
         // Set scene
         this.scene = new Scene()
-        this.scene.fog = new FogExp2(0x192841, 0.07);
+        this.scene.fog = new FogExp2(0x152238, .09);
         // Set renderer
         this.renderer = new WebGLRenderer({
             canvas: this.canvas,
@@ -54,7 +79,9 @@ export default class App {
         })
 
         this.time.on('tick', () => {
-            this.renderer.render(this.scene, this.camera.camera)
+            this.counter += 0.01;
+            this.customPass.uniforms["amount"].value = this.counter;
+            this.composer.render()
             // this.toggleNDMode()
         })
         // Set RequestAnimationFrame with 60fps
@@ -63,7 +90,7 @@ export default class App {
             // if the window is only in the background without focus (for example, if you select another window without minimizing the browser one),
             // which might cause some performance or batteries issues when testing on multiple browsers
             if (!(this.renderOnBlur?.activated && !document.hasFocus())) {
-                this.renderer.render(this.scene, this.camera.camera)
+                this.composer.render()
             }
         })
 
@@ -87,14 +114,14 @@ export default class App {
     }
 
     setChapter1() {
-        // Create chapter 1 instance
-        this.chapter1 = new Chapter1({
+        // Create chapter 2 instance
+        this.chapter2 = new Chapter1({
             time: this.time,
             debug: this.debug,
             assets: this.assets,
         })
         // Add chapter to scene
-        this.scene.add(this.chapter1.container)
+        this.scene.add(this.chapter2.container)
     }
 
     setConfig() {
