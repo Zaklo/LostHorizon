@@ -1,4 +1,4 @@
-import {Object3D, AmbientLight, Color, SpotLight, HemisphereLight} from 'three'
+import {Object3D, AmbientLight, Color } from 'three'
 
 export default class AmbientLightSource {
   constructor(options) {
