@@ -97,6 +97,10 @@ export default class Camera {
             this.stopMove()
         }
 
+        if (p1.x === 44.77510493115564 && p1.z === 7.157337627410166) {
+            this.stopMove()
+        } 
+
         gsap.timeline().to(this.camera.position, {x: p1.x - 13.3, y: p1.y + 1, z: p1.z - 1})
 
         this.camera.updateProjectionMatrix();

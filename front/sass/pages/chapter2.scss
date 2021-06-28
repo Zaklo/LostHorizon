@@ -58,6 +58,16 @@
     }
 }
 
+@keyframes opacity_obscurity{
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.obscurity{
+    display: none; position: fixed; top: 0; left: 0; height: 100vh; width: 100vw; 
+    background-image: url("../img/obscurity.png"); background-size: cover; background-position: center; background-repeat: no-repeat; animation-name: opacity_obscurity; animation-fill-mode: forwards; animation-duration: 10s;
+}
+
 .message-bottom{
     text-transform: uppercase; position: absolute; opacity: 0; display: block; bottom: 30px; left: 50%; transform: translateX(-50%); color: white; animation-name: fadeText; animation-duration: 3s; animation-fill-mode: forwards; z-index: 5;
 }
